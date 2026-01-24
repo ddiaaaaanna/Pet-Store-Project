@@ -1,0 +1,90 @@
+body,
+h1,
+p {
+  margin: 0;
+}
+
+body,
+input::placeholder {
+  font-family: "Lexend", sans-serif;
+}
+
+.flex-container {
+  display: flex;
+}
+
+/* HEADER */
+
+.announcement-bar {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(0, 119, 255);
+  color: white;
+  font-family: "DynaPuff", sans-serif !important;
+  margin: 0 0 10px 0;
+}
+
+.pre-nav-links {
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.pre-nav-links a {
+  text-decoration: none;
+  color: black;
+  padding: 0 10px;
+}
+
+.divider-line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(117, 117, 117, 0.5);
+  margin-bottom: 20px;
+}
+
+nav {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.website-header img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+
+.search-bar-nav {
+  position: relative;
+}
+
+.search-bar-nav input {
+  border-radius: 5px;
+  border: 0.5px solid rgb(156, 154, 154);
+  padding: 10px;
+  width: 350px;
+}
+
+.search-bar-nav img {
+  position: absolute;
+  right: 9px;
+  top: 10px;
+}
+
+.search-bar-nav img:hover {
+  cursor: pointer;
+}
+
+.icons-menu i {
+  padding: 0 10px;
+  font-size: 1.5em;
+  opacity: 65%;
+}
+
+.icons-menu i:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+/* JS STYLES */
