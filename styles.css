@@ -4,8 +4,7 @@ p {
   margin: 0;
 }
 
-body,
-input::placeholder {
+body {
   font-family: "Lexend", sans-serif;
 }
 
