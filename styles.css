@@ -87,3 +87,52 @@ nav {
 }
 
 /* JS STYLES */
+
+/* order track popup */
+
+.order-track-box-hidden {
+  display: none;
+}
+
+.order-track-box-active {
+  border: 1px solid rgb(29, 29, 212);
+  max-width: 420px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 30px;
+  position: relative;
+}
+
+.order-track-box-active form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.order-track-box-active input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+}
+
+.order-track-btn {
+  width: 100%;
+  max-width: 150px;
+  padding: 10px 5px;
+  border: none;
+  background-color: #2066e4;
+  color: white;
+}
+
+.order-track-box-active button:hover {
+  cursor: pointer;
+}
+
+#exit-track-btn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 30px;
+}

@@ -33,7 +33,7 @@
         </p>
       </div>
       <div class="pre-nav-links flex-container">
-        <a href="#">Track your order</a>
+        <a href="#" id="header-order-tracking-btn">Track your order</a>
         <span>|</span>
         <a href="">Grooming services</a>
         <span>|</span>
@@ -63,7 +63,27 @@
         </div>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section id="order-track-popup">
+        <div class="order-track-box-hidden">
+          <form action="">
+            <label for="">Please provide your order number and email.</label>
+            <input
+              type="number"
+              placeholder="Enter your tracking number"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button class="order-track-btn">Track my order</button>
+            <button id="exit-track-btn">X</button>
+          </form>
+        </div>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>
