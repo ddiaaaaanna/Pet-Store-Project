@@ -8,6 +8,11 @@ body {
   font-family: "Lexend", sans-serif;
 }
 
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .flex-container {
   display: flex;
 }
@@ -130,9 +135,54 @@ nav {
   cursor: pointer;
 }
 
-#exit-track-btn {
+#exit-small-btn {
   border: none;
   background-color: transparent;
   position: absolute;
-  right: 30px;
+  right: 5px;
+  top: 10px;
+}
+
+/* grooming services popup */
+
+/*  */
+
+.grooming-services-box-hidden {
+  display: none;
+}
+
+.grooming-form {
+  display: flex;
+  /* gap: 16; */
+}
+
+#grooming-services-popup {
+  /* border: 1px solid blue; */
+  max-width: 420px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 40px;
+}
+
+.grooming-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#pet-type-options {
+  width: 50%;
+  padding: 10px;
+}
+
+#pet-type-options option {
+  font-size: 16px;
+}
+
+.grooming-services-label {
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
 }
