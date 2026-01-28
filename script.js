@@ -1,15 +1,26 @@
 const orderTrackBtn = document.getElementById("header-order-tracking-btn");
-
-const orderTrackBox = document.querySelector(".order-track-box-hidden");
+const orderTrackBox = document.getElementById("order-track-box");
 
 orderTrackBtn.addEventListener("click", () => {
-  orderTrackBox.classList.remove("order-track-box-hidden");
-  orderTrackBox.classList.add("order-track-box-active");
+  orderTrackBox.classList.remove("popup-box-hidden");
+  orderTrackBox.classList.add("popup-box-active");
 });
 
-const orderTrackExitBnt = document.getElementById("exit-small-btn");
+const groomingBtn = document.getElementById("header-grooming-btn");
+const groomingBox = document.getElementById("grooming-box");
 
-orderTrackExitBnt.addEventListener("click", () => {
-  orderTrackBox.classList.remove("order-track-box-active");
-  orderTrackBox.classList.add("order-track-box-hidden");
+groomingBtn.addEventListener("click", () => {
+  groomingBox.classList.remove("popup-box-hidden");
+  groomingBox.classList.add("popup-box-active");
+});
+
+const orderTrackExitBtns = document.querySelectorAll(".exit-small-btn");
+
+orderTrackExitBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    orderTrackBox.classList.remove("popup-box-active");
+    orderTrackBox.classList.add("popup-box-hidden");
+    groomingBox.classList.remove("popup-box-active");
+    groomingBox.classList.add("popup-box-hidden");
+  });
 });

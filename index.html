@@ -35,7 +35,7 @@
       <div class="pre-nav-links flex-container">
         <a href="#" id="header-order-tracking-btn">Track your order</a>
         <span>|</span>
-        <a href="">Grooming services</a>
+        <a href="#" id="header-grooming-btn">Grooming services</a>
         <span>|</span>
         <a href="">Gift Card</a>
       </div>
@@ -65,10 +65,12 @@
     </header>
     <main>
       <!-- ORDER TRACK POPUP -->
-      <section id="order-track-popup">
-        <div class="order-track-box-hidden">
+      <section>
+        <div class="popup-box-hidden" id="order-track-box">
           <form action="">
-            <label for="">Please provide your order number and email.</label>
+            <label for="input"
+              >Please provide your order number and email.</label
+            >
             <input
               type="number"
               placeholder="Enter your tracking number"
@@ -79,40 +81,46 @@
               placeholder="Enter your email address"
               required
             />
-            <button class="order-track-btn" type="submit">
+            <button class="popup-action-btn" type="submit">
               Track my order
             </button>
           </form>
-          <button id="exit-small-btn">X</button>
+          <button class="exit-small-btn">X</button>
         </div>
       </section>
       <!-- GROOMING SERVICES POPUP -->
-      <section id="grooming-services-popup">
-        <div class="grooming-services-box-hidden">
+      <section>
+        <div class="popup-box-hidden" id="grooming-box">
+          <label for="form" class="popup-main-label"
+            >Please enter your pet info and we'll get in touch.</label
+          >
           <form action="" class="grooming-form">
-            <div class="grooming-field">
-              <label for="pet-type-options" class="grooming-services-label"
-                >Pet type</label
-              >
-              <select name="" id="pet-type-options">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="rabbit">Rabbit</option>
-              </select>
+            <div class="input-field">
+              <div class="grooming-field">
+                <label for="pet-type-options" class="grooming-label"
+                  >Pet type</label
+                >
+                <select class="pet-type-options">
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="rabbit">Rabbit</option>
+                </select>
+              </div>
+              <div class="grooming-field">
+                <label for="pet-age-options" class="grooming-label"
+                  >Pet age</label
+                >
+                <select class="pet-type-options">
+                  <option value="baby">8weeks - 5months</option>
+                  <option value="young">5months - 2years</option>
+                  <option value="adult">2years - 8years</option>
+                  <option value="senior">8years and up</option>
+                </select>
+              </div>
             </div>
-            <div class="grooming-field">
-              <label for="pet-age-options" class="grooming-services-label"
-                >Pet age</label
-              >
-              <select name="" id="pet-type-options">
-                <option value="baby">8weeks - 5months</option>
-                <option value="young">5months - 2years</option>
-                <option value="adult">2years - 8years</option>
-                <option value="senior">8years and up</option>
-              </select>
-            </div>
+            <button type="submit" class="popup-action-btn">Book Now</button>
           </form>
-          <button type="submit">Book Now</button>
+          <button class="exit-small-btn">X</button>
         </div>
       </section>
     </main>
