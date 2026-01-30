@@ -5,7 +5,7 @@ p {
 }
 
 body {
-  font-family: "Lexend", sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 select {
@@ -31,8 +31,8 @@ select {
 .pre-nav-links {
   padding: 10px;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  /* margin-bottom: 5px; */
 }
 
 .pre-nav-links a {
@@ -41,22 +41,41 @@ select {
   padding: 0 10px;
 }
 
+.pre-nav-links a:hover,
+.main-menu ul a:hover {
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
 .divider-line {
   height: 1px;
   width: 100%;
-  background-color: rgba(117, 117, 117, 0.5);
+  background-color: rgba(117, 117, 117, 0.25);
   margin-bottom: 20px;
 }
 
 nav {
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .website-header img {
   width: 150px;
   height: auto;
   object-fit: cover;
+}
+
+.main-menu ul a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.main-menu ul {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  /* justify-content: space-evenly; */
 }
 
 .search-bar-nav {
@@ -94,6 +113,17 @@ nav {
 /* JS STYLES */
 
 /* order track popup */
+
+/* OVERLAY  OVERLAY*/
+
+/* .hidden {
+  display: none;
+}
+
+.popup-background-overlay {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+} */
 
 /* both popup boxes here */
 .popup-box-hidden {
