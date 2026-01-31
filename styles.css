@@ -5,10 +5,11 @@ p {
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-select {
+select,
+input {
   font-family: inherit;
   font-size: inherit;
 }
@@ -41,22 +42,24 @@ select {
   padding: 0 10px;
 }
 
-.pre-nav-links a:hover,
-.main-menu ul a:hover {
-  color: rgba(0, 0, 0, 0.5);
+.pre-nav-links a:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .divider-line {
   height: 1px;
   width: 100%;
   background-color: rgba(117, 117, 117, 0.25);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
+
+/* MENU-NAVIGATION */
 
 nav {
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: 0 20px;
 }
 
 .website-header img {
@@ -67,47 +70,103 @@ nav {
 
 .main-menu ul a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
+  color: rgb(0, 0, 0, 0.9);
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.main-menu-deals {
+  color: #ff2433;
+}
+
+.main-menu ul a:hover,
+.main-menu-deals:hover {
+  color: rgba(0, 119, 255);
+  cursor: pointer;
 }
 
 .main-menu ul {
   display: flex;
   padding: 20px;
   gap: 20px;
-  /* justify-content: space-evenly; */
 }
 
 .search-bar-nav {
   position: relative;
 }
 
+/* SEARCH BAR  */
+
 .search-bar-nav input {
-  border-radius: 5px;
-  border: 0.5px solid rgb(156, 154, 154);
+  border-radius: 6px;
+  border: none;
   padding: 10px;
   width: 350px;
+  background-color: #f7f7f7;
+}
+
+.search-bar-nav input::placeholder {
+  font-size: 14px;
 }
 
 .search-bar-nav img {
   position: absolute;
   right: 9px;
-  top: 10px;
+  top: 11px;
 }
 
 .search-bar-nav img:hover {
   cursor: pointer;
 }
 
+/* SEARCH BAR DROPDOWN */
+
+.search-bar-dropdown {
+  padding: 15px 20px 0;
+  border-radius: 6px;
+  box-shadow: 1px 1px 22px -4px rgba(0, 0, 0, 0.43);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar-dropdown h6 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.search-bar-dropdown ul {
+  padding: 0;
+}
+
+.search-bar-dropdown ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.search-bar-dropdown ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.search-bar-dropdown ul li a .bi-search {
+  margin-right: 10px;
+}
+
+.search-bar-dropdown .arrow-left {
+  text-align: left;
+}
+
 .icons-menu i {
   padding: 0 10px;
   font-size: 1.5em;
-  opacity: 65%;
 }
 
 .icons-menu i:hover {
   cursor: pointer;
-  opacity: 90%;
+  filter: drop-shadow(0 0 1px rgba(0, 119, 255, 1));
 }
 
 /* JS STYLES */
