@@ -24,3 +24,16 @@ orderTrackExitBtns.forEach((btn) => {
     groomingBox.classList.add("popup-box-hidden");
   });
 });
+
+const searchInput = document.getElementById("searchbar");
+const searchDropdown = document.getElementById("search-bar-dropdown");
+
+searchInput.addEventListener("focus", () => {
+  searchDropdown.classList.remove("search-bar-dropdown-hidden");
+  searchDropdown.classList.add("search-bar-dropdown");
+});
+
+searchInput.addEventListener("blur", () => {
+  searchDropdown.classList.remove("search-bar-dropdown");
+  searchDropdown.classList.add("search-bar-dropdown-hidden");
+});

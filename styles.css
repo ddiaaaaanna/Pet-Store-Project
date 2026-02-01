@@ -93,16 +93,18 @@ nav {
 
 .search-bar-nav {
   position: relative;
+  width: 330px;
 }
 
 /* SEARCH BAR  */
 
 .search-bar-nav input {
-  border-radius: 6px;
+  border-radius: 6px 6px 0 0;
   border: none;
   padding: 10px;
   width: 350px;
   background-color: #f7f7f7;
+  position: relative;
 }
 
 .search-bar-nav input::placeholder {
@@ -111,7 +113,7 @@ nav {
 
 .search-bar-nav img {
   position: absolute;
-  right: 9px;
+  right: -20px;
   top: 11px;
 }
 
@@ -123,8 +125,10 @@ nav {
 
 .search-bar-dropdown {
   padding: 15px 20px 0;
-  border-radius: 6px;
-  box-shadow: 1px 1px 22px -4px rgba(0, 0, 0, 0.43);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0px 4px 8px 3px rgba(174, 174, 174, 0.51);
+  position: absolute;
+  width: inherit;
 }
 
 .item {
@@ -159,6 +163,10 @@ nav {
   text-align: left;
 }
 
+.search-bar-dropdown-hidden {
+  display: none;
+}
+
 .icons-menu i {
   padding: 0 10px;
   font-size: 1.5em;
@@ -172,17 +180,6 @@ nav {
 /* JS STYLES */
 
 /* order track popup */
-
-/* OVERLAY  OVERLAY*/
-
-/* .hidden {
-  display: none;
-}
-
-.popup-background-overlay {
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-} */
 
 /* both popup boxes here */
 .popup-box-hidden {
