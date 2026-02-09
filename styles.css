@@ -195,7 +195,8 @@ input {
   list-style: none;
 }
 
-.main-menu ul li a:hover {
+.main-menu ul li a:hover,
+.carousel-next:hover {
   background-color: #0056b7;
   cursor: pointer;
 }
@@ -391,13 +392,14 @@ input {
   color: #de2733;
   text-transform: uppercase;
   text-align: center;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -0.5px;
-  font-size: 36px;
+  font-size: 25px;
+  line-height: 170%;
 }
 
 .h4-dogs {
-  font-size: 66px;
+  font-size: 80px !important;
   font-weight: 900;
 }
 
@@ -406,4 +408,48 @@ input {
   height: 400px;
   border-radius: 0 0 6px 0;
   display: block;
+}
+
+/* PET CHOICES */
+
+.pet-choices h1 {
+  text-align: center;
+  margin: 55px 0 20px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.pet img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  box-shadow: 0px 4px 8px 3px rgba(174, 174, 174, 0.51);
+}
+
+.pet {
+  text-align: center;
+  font-weight: 500;
+}
+
+.pet-container {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-next {
+  position: absolute;
+  right: 10px;
+  border-radius: 60%;
+  background-color: #2066e4;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
