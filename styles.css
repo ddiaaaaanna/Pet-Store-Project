@@ -26,7 +26,13 @@ input {
 }
 
 .container {
-  margin: 0 120px;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
 }
 
 /* HEADER */
@@ -43,8 +49,8 @@ input {
 }
 
 .announcement-bar p:hover {
-  cursor: pointer;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .pre-nav-links {
@@ -65,7 +71,6 @@ input {
 }
 
 .pre-nav-links a:hover {
-  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -162,12 +167,12 @@ input {
   margin-right: 10px;
 }
 
-.icons-menu i {
+.header-actions i {
   padding: 0 10px;
   font-size: 1.5em;
 }
 
-.icons-menu i:hover {
+.header-actions i:hover {
   cursor: pointer;
   filter: drop-shadow(0 0 1px rgba(0, 119, 255, 1));
 }
@@ -221,11 +226,18 @@ input {
   border: 1px solid rgb(29, 29, 212);
   max-width: 420px;
   width: 100%;
-  margin: 40px auto;
+  /* margin: 0 auto; */
   padding: 30px;
-  position: relative;
+  /* position: relative; */
   border-radius: 8px;
   text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: white;
+  box-shadow: 0px 4px 8px 3px rgba(255, 255, 255, 0.51);
 }
 
 .popup-box form {
@@ -255,20 +267,12 @@ input {
   border-radius: 8px;
 }
 
-.popup-primary-btn:hover {
-  cursor: pointer;
-}
-
 .popup-close-btn {
   border: none;
   background-color: transparent;
   position: absolute;
   right: 5px;
   top: 10px;
-}
-
-.popup-close-btn:hover {
-  cursor: pointer;
 }
 
 /* grooming services popup */
@@ -319,6 +323,7 @@ input {
   align-items: center;
   border-radius: 0 0 6px 6px;
   position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -353,7 +358,6 @@ input {
 }
 
 .hero-btn:hover {
-  cursor: pointer;
   background-color: #1b5dd7;
 }
 
@@ -375,12 +379,12 @@ input {
   width: 200px;
   height: 120px;
   position: absolute;
-  bottom: 12px;
+  bottom: 30px;
 }
 
 .hero-badge p {
   position: absolute;
-  bottom: 19%;
+  bottom: 24%;
   color: white;
   text-transform: uppercase;
   font-weight: 900;
@@ -396,6 +400,7 @@ input {
   letter-spacing: -0.5px;
   font-size: 25px;
   line-height: 170%;
+  padding-bottom: 40px;
 }
 
 .h4-dogs {
@@ -419,7 +424,7 @@ input {
   font-weight: 800;
 }
 
-.pet img {
+.pet-card img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -427,9 +432,14 @@ input {
   box-shadow: 0px 4px 8px 3px rgba(174, 174, 174, 0.51);
 }
 
-.pet {
+.pet-card {
   text-align: center;
   font-weight: 500;
+}
+
+.pet-card a {
+  text-decoration: none;
+  color: black;
 }
 
 .pet-container {
@@ -438,6 +448,7 @@ input {
   position: relative;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .carousel-next {
