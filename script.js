@@ -35,7 +35,7 @@ carrouselNextBtn.addEventListener("click", () => {
     carrouselNextBtn.textContent = ">";
 
     carrouselNextBtn.style.left = "auto";
-    carrouselNextBtn.style.right = "-26px";
+    carrouselNextBtn.style.right = "-13px";
     carrouselBtnActive = true;
   }
 });
@@ -55,7 +55,7 @@ const petSaleProducts = [
       "https://images.baxterboo.com/global/images/products/large/petshopfringe-studio-plush-dog-toy-cant-be-ap-heart-rope-7645.webp",
     name: "Plush Heart Rope Dog Toy",
     rating: 4.5,
-    originalPrice: 12.99,
+    originalPrice: 19.99,
   },
   {
     photo:
@@ -69,7 +69,7 @@ const petSaleProducts = [
       "https://shop.hauspanther.com/cdn/shop/products/7383alt2_cat-furniture-cozytunnel_RGB_2048x2048.jpg",
     name: "Cat Scratcher Tunnel",
     rating: 4.4,
-    originalPrice: 19.99,
+    originalPrice: 49.99,
   },
   {
     photo:
@@ -89,7 +89,7 @@ const petSaleProducts = [
       "https://pitbulloutfitters.com/cdn/shop/files/buffalo-plaid-dog-sweater.jpg?v=1756555353",
     name: "Plaid Dog Sweater",
     rating: 4.2,
-    originalPrice: 19.99,
+    originalPrice: 39.99,
   },
   {
     photo:
@@ -113,7 +113,7 @@ const petSaleProducts = [
   },
 ];
 
-const saleSectionContent = document.getElementById("sale-section-content");
+const saleSectionContent = document.getElementById("sale-section-cards");
 
 function renderSaleItems(items) {
   items.forEach((item) => {
@@ -123,8 +123,8 @@ function renderSaleItems(items) {
     div.innerHTML = `
     <img src = ${item.photo} alt = "Pet store sale item">
     <h3>${item.name}</h3>
-    <p>${item.rating}</p>
-    <p>${item.originalPrice}</p>
+    <p class="item-rating">${renderRatingStars(item.rating)} (${item.rating})</p>
+    <p><span class="original-price">${item.originalPrice}€</span> <span class="sale-price">${calculateSalePrice(item.originalPrice)}€</span></p>
     `;
 
     saleSectionContent.appendChild(div);
@@ -132,3 +132,66 @@ function renderSaleItems(items) {
 }
 
 renderSaleItems(petSaleProducts);
+
+// STAR EMOTICON LOGIC
+
+function renderRatingStars(rating) {
+  const wholeRating = Math.floor(rating);
+  const decimalRating = rating - wholeRating;
+
+  let starRating = "";
+
+  for (let i = 0; i < wholeRating; i++) {
+    starRating += `<i class="bi bi-star-fill"></i>`;
+  }
+
+  if (decimalRating >= 0.5) {
+    starRating += `<i class="bi bi-star-half"></i>`;
+  }
+
+  const starsSoFar = wholeRating + (decimalRating >= 0.5 ? 1 : 0);
+  const emptyStars = 5 - starsSoFar;
+
+  for (let i = 0; i < emptyStars; i++) {
+    starRating += `<i class="bi bi-star"></i>`;
+  }
+
+  return starRating;
+}
+
+function calculateSalePrice(originalPrice) {
+  const saleAmount = 50;
+
+  const salePrice = (originalPrice / 100) * saleAmount;
+
+  const newAmount = originalPrice - salePrice;
+
+  return newAmount.toFixed(2);
+}
+
+// SALE SECTION CAROUSEL
+
+const saleSectionCarouselBtn = document.getElementById("carousel-next-sale");
+const saleCardSection = document.getElementById("sale-section-cards");
+
+let saleSectionBtnActive = true;
+
+saleSectionCarouselBtn.addEventListener("click", () => {
+  if (saleSectionBtnActive) {
+    saleCardSection.style.transform = "translateX(-620px)";
+    saleSectionCarouselBtn.textContent = "<";
+
+    saleSectionCarouselBtn.style.left = "-12px";
+    saleSectionCarouselBtn.style.right = "auto";
+
+    saleSectionBtnActive = false;
+  } else {
+    saleCardSection.style.transform = "translateX(0px)";
+    saleSectionCarouselBtn.textContent = ">";
+
+    saleSectionCarouselBtn.style.left = "auto";
+    saleSectionCarouselBtn.style.right = "-26px";
+
+    saleSectionBtnActive = true;
+  }
+});
