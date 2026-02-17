@@ -178,7 +178,7 @@ let saleSectionBtnActive = true;
 
 saleSectionCarouselBtn.addEventListener("click", () => {
   if (saleSectionBtnActive) {
-    saleCardSection.style.transform = "translateX(-620px)";
+    saleCardSection.style.transform = "translateX(-645px)";
     saleSectionCarouselBtn.textContent = "<";
 
     saleSectionCarouselBtn.style.left = "-12px";
