@@ -386,22 +386,9 @@ button:hover {
 
 /* SALE SECTION  */
 
-.sale-section-header::before {
-  content: "";
-  background: url(./Images/paw-print-pink.png);
-  background-color: #9b2562;
-  background-size: 500px;
-  inset: -30px;
-  pointer-events: none;
-  position: absolute;
-  z-index: 0;
-  opacity: 0.2;
-}
-
 .sale-section-header {
-  padding: 10px;
+  padding: 20px;
   position: relative;
-  z-index: 1;
 }
 
 .sale-section-header > * {
@@ -410,12 +397,23 @@ button:hover {
 }
 
 .sale-section-header h1 {
-  font-size: 56px;
+  font-size: 80px;
   text-transform: uppercase;
 }
 
+.sale-section::before {
+  inset: -40px;
+  content: "";
+  background: url(./Images/paw-print-pink.png);
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  opacity: 0.6;
+}
+
 .sale-section {
-  background-color: #c02e7a;
+  z-index: 1;
+  background-color: #ff2c98;
   padding: 30px;
   text-align: center;
   color: white;
@@ -423,23 +421,16 @@ button:hover {
   border-radius: 8px;
   margin-bottom: 40px;
   position: relative;
+  overflow: hidden;
 }
 
 .sale-section h2 {
-  margin: 60px 0 0;
-  font-size: 42px;
+  font-size: 36px;
+  margin: 10px 0;
 }
 
 .sale-text {
   padding: 10px 0;
-}
-
-.sale-section a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  margin-bottom: 20px;
 }
 
 .sale-section-cards {
@@ -503,3 +494,26 @@ button:hover {
 #sale-section-container {
   overflow: hidden;
 }
+
+.sale-section-btn {
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
+  color: #c02e7a;
+  border-radius: 6px;
+  border: none;
+  text-decoration: none;
+  background-color: white;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 580;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: rgba(30, 0, 255, 0.51);
+}
+
+/* SHIPPING SECTION */

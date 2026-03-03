@@ -51,9 +51,8 @@ const petSaleProducts = [
     originalPrice: 14.99,
   },
   {
-    photo:
-      "https://images.baxterboo.com/global/images/products/large/petshopfringe-studio-plush-dog-toy-cant-be-ap-heart-rope-7645.webp",
-    name: "Plush Heart Rope Dog Toy",
+    photo: "https://m.media-amazon.com/images/I/61BUs+8RMrL.jpg",
+    name: "Monkey Rope Tug Dog Toy",
     rating: 4.5,
     originalPrice: 19.99,
   },
