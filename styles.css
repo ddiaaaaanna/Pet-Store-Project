@@ -1,8 +1,24 @@
+:root {
+  --primary-blue: #0177ff;
+  --primary-blue-dark: #1b5dd7;
+  --primary-blue-hover: #2066e4;
+
+  --accent-red: #de2733;
+
+  --light-bg: #fafafa;
+
+  --radius-main: 8px;
+  --radius-inner: 6px;
+}
+
 body,
 h1,
+h2,
+h3,
 h4,
-p,
-h5 {
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -39,8 +55,21 @@ input {
 }
 
 a:hover,
-button:hover {
+button:hover,
+.footer-social-links i {
   cursor: pointer;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin: 40px 0 20px;
+  gap: 20px;
+  font-weight: 700;
+}
+
+.section-header a {
+  color: var(--primary-blue-dark);
 }
 
 /* HEADER */
@@ -48,8 +77,7 @@ button:hover {
 .announcement-bar {
   text-align: center;
   padding: 10px;
-  background-color: rgb(0, 119, 255);
-  margin: 0 0 10px 0;
+  background-color: var(--primary-blue);
 }
 
 .announcement-bar a {
@@ -77,7 +105,7 @@ button:hover {
 }
 
 .links-left a {
-  color: #0177ff;
+  color: var(--primary-blue);
 }
 
 .pre-nav-links a:hover {
@@ -114,7 +142,7 @@ button:hover {
 }
 
 .search-bar-nav input {
-  border-radius: 6px;
+  border-radius: var(--radius-inner);
   border: 1px solid grey;
   padding: 10px;
   width: 500px;
@@ -155,7 +183,6 @@ button:hover {
 }
 
 .search-bar-dropdown h6 {
-  margin: 0;
   font-size: 16px;
 }
 
@@ -187,11 +214,6 @@ button:hover {
 
 /* MAIN MENU */
 
-.main-menu {
-  position: relative;
-  z-index: 1;
-}
-
 .main-menu ul a {
   color: white;
   font-weight: 600;
@@ -212,7 +234,7 @@ button:hover {
 .main-menu ul {
   display: flex;
   justify-content: space-evenly;
-  background-color: #0177ff;
+  background-color: var(--primary-blue);
   padding: 15px;
   margin: 0;
 }
@@ -220,7 +242,7 @@ button:hover {
 /* HERO */
 
 .hero {
-  background-color: #de2733;
+  background-color: var(--accent-red);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,9 +272,9 @@ button:hover {
   display: block;
   width: fit-content;
   color: white;
-  border-radius: 6px;
+  border-radius: var(--radius-inner);
   border: none;
-  background-color: #2066e4;
+  background-color: var(--primary-blue-hover);
   padding: 15px 20px;
   font-size: 16px;
   font-weight: 580;
@@ -263,7 +285,7 @@ button:hover {
 }
 
 .hero-btn:hover {
-  background-color: #1b5dd7;
+  background-color: var(--primary-blue-dark);
 }
 
 .hero-badge {
@@ -298,7 +320,7 @@ button:hover {
 }
 
 .hero-badge h4 {
-  color: #de2733;
+  color: var(--accent-red);
   text-transform: uppercase;
   text-align: center;
   font-weight: 800;
@@ -322,11 +344,10 @@ button:hover {
 
 /* PET CARROUSEL */
 
-.pet-carrousel h1 {
-  text-align: center;
-  margin: 55px 0 20px;
-  font-size: 36px;
-  font-weight: 800;
+.pet-carrousel {
+  margin-top: 80px;
+  background-color: var(--light-bg);
+  padding: 5px 0;
 }
 
 .pet-card img {
@@ -357,7 +378,7 @@ button:hover {
   align-items: center;
   margin-bottom: 40px;
   padding: 0 15px;
-  transition: transform 0.2s ease;
+  transition: transform 0.9s ease;
 }
 
 .carousel-next {
@@ -367,7 +388,7 @@ button:hover {
   right: -13px;
   top: 36%;
   border-radius: 60%;
-  background-color: #2066e4;
+  background-color: var(--primary-blue-hover);
   padding: 15px 20px;
   color: white;
   border: none;
@@ -383,54 +404,15 @@ button:hover {
 
 /* SALE SECTION  */
 
-.sale-section-header {
-  /* padding: 20px; */
-  position: relative;
-}
-
-.sale-section-header > * {
-  position: relative;
-  z-index: 1;
-}
-
-.sale-section-header h1 {
-  margin-bottom: 40px;
-  font-size: 44px;
-  text-transform: uppercase;
-  /* margin-bottom: 40px; */
-}
-
-.sale-section::before {
-  inset: -40px;
-  content: "";
-  background: url(./Images/paw-print-pink.png);
-  pointer-events: none;
-  position: absolute;
-  z-index: 0;
-  opacity: 0.6;
-}
-
-.sale-section {
-  z-index: 1;
-  background-color: #ff2c98;
+.sale-section-content {
+  background-color: var(--light-bg);
   padding: 30px;
   text-align: center;
-  color: white;
-  margin-top: 40px;
-  border-radius: 8px;
-  margin-bottom: 40px;
-  position: relative;
-  overflow: hidden;
+  color: var(--primary-blue-dark);
+  margin: 20px 0 40px;
+  border-radius: var(--radius-main);
+  transition: transform 0.6s ease;
 }
-
-/* .sale-section h2 {
-  font-size: 36px;
-  margin: 10px 0;
-}
-
-.sale-text {
-  padding: 10px 0;
-} */
 
 .sale-section-cards {
   display: flex;
@@ -446,7 +428,7 @@ button:hover {
   width: 200px;
   background-color: white;
   color: black;
-  border-radius: 8px;
+  border-radius: var(--radius-main);
   padding: 20px 10px;
 }
 
@@ -484,31 +466,12 @@ button:hover {
 
 #carousel-next-sale {
   top: 160px;
-  transition: transform 0.2s ease;
+  transition: transform 6s ease;
 }
 
 #sale-section-container {
   overflow: hidden;
 }
-
-/* .sale-section-btn {
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
-  color: white;
-  border: none;
-  text-decoration: none;
-  padding: 15px 20px;
-  font-size: 16px;
-  font-weight: 580;
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.hero-btn:hover {
-  background-color: rgba(30, 0, 255, 0.51);
-} */
 
 /* SHIPPING SECTION */
 
@@ -519,7 +482,7 @@ button:hover {
   height: 250px;
   width: 100%;
   margin: 60px 0 40px;
-  border-radius: 8px;
+  border-radius: var(--radius-main);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -546,9 +509,9 @@ button:hover {
   padding: 0;
   border: none;
   background-color: transparent;
-  color: #1b5dd7;
+  color: var(--primary-blue-dark);
   background-color: white;
-  border-radius: 6px;
+  border-radius: var(--radius-inner);
   padding: 10px 20px;
 }
 
@@ -557,12 +520,6 @@ button:hover {
 .top-deals-section {
   text-align: center;
   margin: 50px 0;
-}
-
-.top-deals-section a {
-  color: #1b5dd7;
-  margin-top: 10px;
-  display: inline-block;
 }
 
 .top-deals-cards {
@@ -575,7 +532,7 @@ button:hover {
 .card-content {
   width: 180px;
   height: 180px;
-  border-radius: 6px;
+  border-radius: var(--radius-inner);
 }
 
 .card-content img {
@@ -584,7 +541,7 @@ button:hover {
 }
 
 .deals-nav {
-  background-color: #de2733;
+  background-color: var(--accent-red);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -593,14 +550,13 @@ button:hover {
 }
 
 .card-badge {
-  background-color: #de2733;
+  background-color: var(--accent-red);
   color: white;
   border-radius: 6px 6px 0 0;
 }
 
 .card {
   display: flex;
-
   align-items: center;
   flex-direction: column;
 }
@@ -608,27 +564,156 @@ button:hover {
 .card p {
   margin-top: 10px;
   width: 70%;
-  align-self: center;
 }
 
 .deals-product {
   background-color: #f5f5f5;
 }
 
+/* FEATURED BRANDS SECTION */
+
+.featured-brands-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.featured-brand-card {
+  background-color: var(--light-bg);
+  border-radius: var(--radius-main);
+  padding: 10px;
+}
+
+.featured-brands-cards img {
+  width: fit-content;
+  height: 150px;
+}
+
+/* BENEFITS SECTION */
+
+.benefits-section {
+  margin: 60px 0 0;
+  background-color: var(--light-bg);
+  padding: 40px;
+  border-radius: var(--radius-main);
+}
+
+.benefits-section-title {
+  text-align: center;
+}
+
+.benefits-cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.benefits-cards img {
+  width: 200px;
+  height: 200px;
+}
+
+.benefits-card p {
+  margin: 10px;
+  width: 80%;
+}
+
 /* FOOTER */
 
-.footer {
-  background-color: #fafafa;
+footer {
+  margin-top: 60px;
+  background-color: #0d63c9;
+  color: white;
+}
+
+.footer-content {
   padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-s-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.footer-divider {
+  padding: 0;
+  margin: 0;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(136, 135, 135);
+  border: none;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 10px;
 }
 
 .footer-links {
-  width: 20%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-links-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: stretch;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+.footer-links-list a {
+  color: white;
+}
+
+.footer-newsletter {
+  width: 550px;
+}
+
+.footer-newsletter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-newsletter input {
+  margin: 20px 0;
+  padding: 8px 30px;
+  border-radius: var(--radius-inner);
+  border: none;
+  background-color: white;
+}
+
+.footer-newsletter-checkbox p {
+  max-width: 420px;
+}
+
+.newsletter-subscribe-btn {
+  margin-top: 20px;
+  text-align: center;
+  padding: 8px 38px;
+  border-radius: var(--radius-inner);
+  border: none;
+  background-color: white;
+}
+
+.footer-badges img {
+  width: fit-content;
+  height: 150px;
+}
+
+.trademark {
+  text-align: center;
+  padding: 10px 0;
 }
