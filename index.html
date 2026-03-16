@@ -14,10 +14,21 @@
       href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="demo-message" id="demo-message">
+      <strong
+        >🐾 Demo version: Only the Dog section and product page are fully
+        implemented. Try exploring Dog → Food to see the shopping flow.</strong
+      >
+      <button id="demo-close-btn">x</button>
+    </div>
     <!-- HEADER -->
     <header>
       <div class="announcement-bar">
@@ -25,6 +36,7 @@
           Anything for Dogs Deals: Save on food, toys & more* >
         </a>
       </div>
+      <div class="divider-line"></div>
       <div class="pre-nav-links flex-container">
         <div class="links-left">
           <a
@@ -48,7 +60,7 @@
       <div class="divider-line"></div>
       <nav class="flex-container top-nav">
         <a href="index.html" class="website-header">
-          <img src="./Images/pet-stop-logovar3.png" alt="PETSTOP logo" />
+          <img src="./Images/petstoplogo.png" alt="PETSTOP logo" />
         </a>
         <!-- SEARCH BAR -->
         <div class="search-bar-nav" id="search-bar-nav">
@@ -59,7 +71,7 @@
             placeholder="Search..."
           />
           <img
-            src=".//Images/hero-search-icon.png"
+            src=".//Images/hero-img/hero-search-icon.png"
             alt="Magnifying glass icon"
           />
           <!-- SEARCH SUGGESTIONS DROPDOWN -->
@@ -119,15 +131,91 @@
             <li><a href="#brands">Brands</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Pharmacy</a></li>
-            <li><a href="#">New Pet</a></li>
+            <li><a href="#new-pet">New Pet</a></li>
             <li><a href="#">Deals</a></li>
           </ul>
         </div>
+        <!-- SHOP DROPDOWN -->
+        <section class="hidden">
+          <div class="shop-dropdown container">
+            <div class="pet-options">
+              <ul>
+                <li><a href="">Dog</a></li>
+                <li><a href="#">Cat</a></li>
+                <li><a href="#">Fish</a></li>
+                <li><a href="#">Bird</a></li>
+                <li><a href="#">Reptile</a></li>
+                <li><a href="#">Small pet</a></li>
+                <li><a href="#">Farm animal</a></li>
+                <li><a href="#">Wild bird</a></li>
+              </ul>
+            </div>
+            <div class="dog-options">
+              <ul>
+                <h4>Food</h4>
+                <li><a href="#">Dry Food</a></li>
+                <li><a href="">Wet Food</a></li>
+                <li><a href="">Puppy Food</a></li>
+                <li><a href="">Vet-Authorised Diets</a></li>
+                <li><a href="">Fresh & Frozen</a></li>
+                <li><a href="">Food Toppers</a></li>
+                <li><a href="">Shop All Dog Food</a></li>
+              </ul>
+              <ul>
+                <h4>Treats</h4>
+                <li><a href="#">Freeze Dried Treats</a></li>
+                <li><a href="#">Bones, Bully Sticks & Chews</a></li>
+                <li><a href="#">Training Treats</a></li>
+                <li><a href="#">Soft & Chewy Treats</a></li>
+                <li><a href="#">Biscuits Cookies, Bakery & Snacks</a></li>
+                <li><a href="#">Dental Treats</a></li>
+                <li><a href="#">Puppy Treats</a></li>
+                <li><a href="#">Jerky Treats</a></li>
+                <li><a href="#">Shop All Dog Treats</a></li>
+              </ul>
+              <ul>
+                <h4>Supplies</h4>
+                <li><a href="#">Collars, Harnesses & Leashes</a></li>
+                <li><a href="#">Toys</a></li>
+                <li><a href="#">Crates, Gates & Containment</a></li>
+                <li><a href="#">Beds & Furniture</a></li>
+                <li><a href="#">Grooming Supplies</a></li>
+                <li><a href="#">Clothing & Shoes</a></li>
+                <li><a href="#">Bowls & Automatic Feeders</a></li>
+                <li><a href="#">Carriers & Travel</a></li>
+                <li><a href="#">Cleaning & Potty</a></li>
+                <li><a href="#">Training & Behavior</a></li>
+                <li><a href="#">Puppy Supplies</a></li>
+              </ul>
+              <ul>
+                <h4>Health & Pharmacy</h4>
+                <li><a href="#">Flea & Tick</a></li>
+                <li><a href="#">Vitamins & Supplements</a></li>
+                <li><a href="#">Pharmacy</a></li>
+                <li><a href="#">Health & Wellness</a></li>
+                <li><a href="#">Heartworm & Parasite Care</a></li>
+                <li><a href="#">Allergy Relief</a></li>
+                <li><a href="#">Anxiety & Calming</a></li>
+                <li><a href="#">Arthritis & Pain Relief</a></li>
+              </ul>
+              <ul>
+                <h4>New & Featured</h4>
+                <li><a href="#">Dog Deals</a></li>
+                <li><a href="#">Clearance</a></li>
+                <li><a href="#">Spring Collection Shop</a></li>
+                <li><a href="#">New Pet</a></li>
+                <li><a href="#">Sports Shop</a></li>
+                <li><a href="#">Puppy Supplies</a></li>
+                <li><a href="#">New & Trending</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </nav>
     </header>
     <main>
       <!-- OVERLAY -->
-      <div class="overlay"></div>
+      <div id="overlay" class="hidden"></div>
       <!-- HERO SECTION -->
       <section>
         <div class="hero container">
@@ -146,13 +234,13 @@
           <!-- bone txt -->
           <div class="hero-badge">
             <h4>Anything for <br /><span class="h4-dogs">Dogs</span></h4>
-            <img src="./Images/hero-badge-bone.png" alt="dog bone" />
+            <img src="./Images/hero-img/hero-badge-bone.png" alt="dog bone" />
             <p>Deals</p>
           </div>
           <!-- img -->
           <div class="hero-media">
             <img
-              src="./Images/hero-img.jpg"
+              src="./Images/hero-img/hero-img.jpg"
               alt="Dog driving in the car looking out the window"
             />
           </div>
@@ -170,44 +258,62 @@
               <div class="pet-card-container">
                 <div class="pet-card">
                   <a href="dog-deals.html">
-                    <img src="./Images/choices-dog.jpg" alt="Dog" />
+                    <img
+                      src="./Images/pet-carousel/choices-dog.jpg"
+                      alt="Dog"
+                    />
                     <p>Dog</p>
                   </a>
                 </div>
                 <div class="pet-card">
                   <a href="#">
-                    <img src="./Images/choices-cat.jpg" alt="Cat" />
+                    <img
+                      src="./Images/pet-carousel/choices-cat.jpg"
+                      alt="Cat"
+                    />
                     <p>Cat</p>
                   </a>
                 </div>
                 <div class="pet-card">
                   <a href="#">
-                    <img src="./Images/choices-fish.jpg" alt="Fish" />
+                    <img
+                      src="./Images/pet-carousel/choices-fish.jpg"
+                      alt="Fish"
+                    />
                     <p>Fish</p>
                   </a>
                 </div>
                 <div class="pet-card">
                   <a href="#">
-                    <img src="./Images/choices-bird.jpg" alt="Bird" />
+                    <img
+                      src="./Images/pet-carousel/choices-bird.jpg"
+                      alt="Bird"
+                    />
                     <p>Bird</p>
                   </a>
                 </div>
                 <div class="pet-card">
                   <a href="#">
-                    <img src="./Images/choices-reptile.jpg" alt="Reptile" />
+                    <img
+                      src="./Images/pet-carousel/choices-reptile.jpg"
+                      alt="Reptile"
+                    />
                     <p>Reptile</p>
                   </a>
                 </div>
                 <div class="pet-card">
                   <a href="#">
-                    <img src="./Images/choices-smallpet.jpg" alt="Small pet" />
+                    <img
+                      src="./Images/pet-carousel/choices-smallpet.jpg"
+                      alt="Small pet"
+                    />
                     <p>Small pet</p>
                   </a>
                 </div>
                 <div class="pet-card">
                   <a href="#">
                     <img
-                      src="./Images/choices-backyard-pet.jpg"
+                      src="./Images/pet-carousel/choices-backyard-pet.jpg"
                       alt="Farm pet"
                     />
                     <p>Farm and backyard pet</p>
@@ -215,7 +321,10 @@
                 </div>
                 <div class="pet-card">
                   <a href="#">
-                    <img src="./Images/choices-wildbird.jpg" alt="Wild bird" />
+                    <img
+                      src="./Images/pet-carousel/choices-wildbird.jpg"
+                      alt="Wild bird"
+                    />
                     <p>Wild bird</p>
                   </a>
                 </div>
@@ -333,6 +442,59 @@
           <!-- end of cards -->
         </div>
       </section>
+      <!-- NEW PET SECTION -->
+      <section class="new-pet-section" id="new-pet">
+        <div class="container">
+          <div class="new-pet-section-header">
+            <h1><span class="title-accent">Welcome home</span> <br />shop</h1>
+          </div>
+          <div class="new-pet-section-content">
+            <div class="new-pet-section-content-header">
+              <h2>New pet in the family?</h2>
+              <p>
+                Begin your journey with everything conveniently in one place.
+              </p>
+            </div>
+            <div class="new-pets-cards">
+              <!--  -->
+              <div class="new-pet-card">
+                <a href="dog-deals.html">
+                  <div class="newpet-card-content">
+                    <h1 class="new-pet-name">Puppy</h1>
+                    <div class="img-circle">
+                      <img
+                        src="./Images/new-pet-section/puppy.jpg"
+                        alt="Labrador puppy"
+                      />
+                    </div>
+                  </div>
+                  <div class="card-label">
+                    <h3>Puppy Supplies</h3>
+                    <p>All the essentials for your new puppy.</p>
+                  </div>
+                </a>
+              </div>
+              <!--  -->
+              <div class="new-pet-card">
+                <div class="newpet-card-content">
+                  <h1 class="new-pet-name">Kitten</h1>
+                  <div class="img-circle">
+                    <img
+                      src="./Images/new-pet-section/kitten.jpg"
+                      alt="Kitten"
+                    />
+                  </div>
+                </div>
+                <div class="card-label">
+                  <h3>Kitten Supplies</h3>
+                  <p>All the essentials for your new kitten.</p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </section>
       <!-- FEATURED BRANDS SECTION -->
       <section class="featured-brands-section" id="brands">
         <div class="container">
@@ -438,7 +600,7 @@
     <footer>
       <div class="footer-s-nav">
         <a href="index.html" class="website-header">
-          <img src="./Images/pet-stop-logovar4.png" alt="PETSTOP logo" />
+          <img src="./Images/petstoplogo-white.png" alt="PETSTOP logo" />
         </a>
         <div class="footer-social-links">
           <p>Follow us:</p>
@@ -447,7 +609,7 @@
           <i class="bi bi-tiktok"></i>
         </div>
       </div>
-      <hr class="footer-divider" />
+      <div class="divider-line"></div>
       <div class="footer-content">
         <div class="footer-newsletter">
           <h2>Subscribe to PetStop's newsletter!</h2>
@@ -483,7 +645,7 @@
           </div>
         </div>
       </div>
-      <hr class="footer-divider" />
+      <div class="divider-line"></div>
       <p class="trademark">2026 @ Pet Stop</p>
     </footer>
   </body>

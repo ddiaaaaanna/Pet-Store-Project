@@ -1,10 +1,21 @@
+// DEMO MESSAGE BUTTON
+
+const demoCloseBtn = document.getElementById("demo-close-btn");
+const demoMessage = document.getElementById("demo-message");
+
+demoCloseBtn.addEventListener("click", () => {
+  demoMessage.classList.add("hidden");
+});
+
 // SEARCH BAR DROPDOWN
 
 const searchInput = document.getElementById("searchbar");
 const searchDropdown = document.getElementById("search-bar-dropdown");
+const overlay = document.getElementById("overlay");
 
 searchInput.addEventListener("focus", () => {
   searchDropdown.classList.remove("hidden");
+  overlay.classList.remove("hidden");
 });
 
 const searchBarNav = document.getElementById("search-bar-nav");
@@ -12,6 +23,7 @@ const searchBarNav = document.getElementById("search-bar-nav");
 document.addEventListener("click", (event) => {
   if (!searchBarNav.contains(event.target)) {
     searchDropdown.classList.add("hidden");
+    overlay.classList.add("hidden");
   }
 });
 
