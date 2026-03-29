@@ -45,16 +45,16 @@
             id="header-adoption-btn"
             ><i class="bi bi-house-heart"></i>Find a Forever Home</a
           >
-          <a href="#" id="header-store-locator-btn"
+          <a href="#" class="disabled-link"
             ><i class="bi bi-geo-alt"></i>Store locator</a
           >
         </div>
         <div class="links-right">
-          <a href="#" id="header-order-tracking-btn">Track your order</a>
+          <a href="#" class="disabled-link">Track your order</a>
           <span>|</span>
-          <a href="#" id="header-grooming-btn">Grooming services</a>
+          <a href="#" class="disabled-link">Grooming services</a>
           <span>|</span>
-          <a href="#">Gift Card</a>
+          <a href="#" class="disabled-link">Gift Card</a>
         </div>
       </div>
       <div class="divider-line"></div>
@@ -76,45 +76,8 @@
           />
           <!-- SEARCH SUGGESTIONS DROPDOWN -->
           <div id="search-bar-dropdown" class="search-bar-dropdown hidden">
-            <h6>Popular searches</h6>
-            <ul>
-              <li>
-                <div class="search-item">
-                  <a href="#"><i class="bi bi-search"></i>dog food</a>
-                  <i class="bi bi-arrow-up-left"></i>
-                </div>
-              </li>
-              <li>
-                <div class="search-item">
-                  <a href="#"><i class="bi bi-search"></i>fish</a>
-                  <i class="bi bi-arrow-up-left"></i>
-                </div>
-              </li>
-              <li>
-                <div class="search-item">
-                  <a href="#"><i class="bi bi-search"></i>cat food</a>
-                  <i class="bi bi-arrow-up-left"></i>
-                </div>
-              </li>
-              <li>
-                <div class="search-item">
-                  <a href="#"><i class="bi bi-search"></i>hamster sweater</a>
-                  <i class="bi bi-arrow-up-left"></i>
-                </div>
-              </li>
-              <li>
-                <div class="search-item">
-                  <a href="#"><i class="bi bi-search"></i>paw balm</a>
-                  <i class="bi bi-arrow-up-left"></i>
-                </div>
-              </li>
-              <li>
-                <div class="search-item">
-                  <a href="#"><i class="bi bi-search"></i>cat toy</a>
-                  <i class="bi bi-arrow-up-left"></i>
-                </div>
-              </li>
-            </ul>
+            <h6 id="search-title">Popular searches</h6>
+            <ul id="search-list"></ul>
           </div>
         </div>
         <div class="header-actions">
@@ -126,8 +89,108 @@
       <!-- NEW MAIN MENU -->
       <nav class="main-nav">
         <div class="main-menu">
-          <ul>
-            <li><a href="#">Shop</a></li>
+          <ul class="main-menu-options">
+            <li id="main-menu">
+              <a href="#" id="menu-shop">Shop</a>
+              <!-- SHOP DROPDOWN -->
+              <section class="hidden" id="menu-dropdown">
+                <div class="shop-dropdown container">
+                  <div class="pet-options">
+                    <ul>
+                      <li><a href="">Dog</a></li>
+                      <li>Cat</li>
+                      <li>Fish</li>
+                      <li>Bird</li>
+                      <li>Reptile</li>
+                      <li>Small pet</li>
+                      <li>Farm animal</li>
+                      <li>Wild bird</li>
+                    </ul>
+                  </div>
+                  <div class="dog-options">
+                    <ul>
+                      <h4>Food</h4>
+                      <li><a href="dog-deals.html">Dry Food</a></li>
+                      <li><a href="dog-deals.html">Wet Food</a></li>
+                      <li><a href="dog-deals.html">Puppy Food</a></li>
+                      <li><a href="dog-deals.html">Vet-Authorised Diets</a></li>
+                      <li><a href="dog-deals.html">Fresh & Frozen</a></li>
+                      <li><a href="dog-deals.html">Food Toppers</a></li>
+                      <li><a href="dog-deals.html">Shop All Dog Food</a></li>
+                    </ul>
+                    <ul>
+                      <h4>Treats</h4>
+                      <li><a href="dog-deals.html">Freeze Dried Treats</a></li>
+                      <li>
+                        <a href="dog-deals.html">Bones, Bully Sticks & Chews</a>
+                      </li>
+                      <li><a href="dog-deals.html">Training Treats</a></li>
+                      <li><a href="dog-deals.html">Soft & Chewy Treats</a></li>
+                      <li>
+                        <a href="dog-deals.html"
+                          >Biscuits Cookies, Bakery & Snacks</a
+                        >
+                      </li>
+                      <li><a href="dog-deals.html">Dental Treats</a></li>
+                      <li><a href="dog-deals.html">Puppy Treats</a></li>
+                      <li><a href="dog-deals.html">Jerky Treats</a></li>
+                      <li><a href="dog-deals.html">Shop All Dog Treats</a></li>
+                    </ul>
+                    <ul>
+                      <h4>Supplies</h4>
+                      <li>
+                        <a href="dog-deals.html"
+                          >Collars, Harnesses & Leashes</a
+                        >
+                      </li>
+                      <li><a href="dog-deals.html">Toys</a></li>
+                      <li>
+                        <a href="dog-deals.html">Crates, Gates & Containment</a>
+                      </li>
+                      <li><a href="dog-deals.html">Beds & Furniture</a></li>
+                      <li><a href="dog-deals.html">Grooming Supplies</a></li>
+                      <li><a href="dog-deals.html">Clothing & Shoes</a></li>
+                      <li>
+                        <a href="dog-deals.html">Bowls & Automatic Feeders</a>
+                      </li>
+                      <li><a href="dog-deals.html">Carriers & Travel</a></li>
+                      <li><a href="dog-deals.html">Cleaning & Potty</a></li>
+                      <li><a href="dog-deals.html">Training & Behavior</a></li>
+                      <li><a href="dog-deals.html">Puppy Supplies</a></li>
+                    </ul>
+                    <ul>
+                      <h4>Health & Pharmacy</h4>
+                      <li><a href="dog-deals.html">Flea & Tick</a></li>
+                      <li>
+                        <a href="dog-deals.html">Vitamins & Supplements</a>
+                      </li>
+                      <li><a href="dog-deals.html">Pharmacy</a></li>
+                      <li><a href="dog-deals.html">Health & Wellness</a></li>
+                      <li>
+                        <a href="dog-deals.html">Heartworm & Parasite Care</a>
+                      </li>
+                      <li><a href="dog-deals.html">Allergy Relief</a></li>
+                      <li><a href="dog-deals.html">Anxiety & Calming</a></li>
+                      <li>
+                        <a href="dog-deals.html">Arthritis & Pain Relief</a>
+                      </li>
+                    </ul>
+                    <ul>
+                      <h4>New & Featured</h4>
+                      <li><a href="dog-deals.html">Dog Deals</a></li>
+                      <li><a href="dog-deals.html">Clearance</a></li>
+                      <li>
+                        <a href="dog-deals.html">Spring Collection Shop</a>
+                      </li>
+                      <li><a href="dog-deals.html">New Pet</a></li>
+                      <li><a href="dog-deals.html">Sports Shop</a></li>
+                      <li><a href="dog-deals.html">Puppy Supplies</a></li>
+                      <li><a href="dog-deals.html">New & Trending</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </li>
             <li><a href="#brands">Brands</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Pharmacy</a></li>
@@ -135,87 +198,11 @@
             <li><a href="#">Deals</a></li>
           </ul>
         </div>
-        <!-- SHOP DROPDOWN -->
-        <section class="hidden">
-          <div class="shop-dropdown container">
-            <div class="pet-options">
-              <ul>
-                <li><a href="">Dog</a></li>
-                <li><a href="#">Cat</a></li>
-                <li><a href="#">Fish</a></li>
-                <li><a href="#">Bird</a></li>
-                <li><a href="#">Reptile</a></li>
-                <li><a href="#">Small pet</a></li>
-                <li><a href="#">Farm animal</a></li>
-                <li><a href="#">Wild bird</a></li>
-              </ul>
-            </div>
-            <div class="dog-options">
-              <ul>
-                <h4>Food</h4>
-                <li><a href="#">Dry Food</a></li>
-                <li><a href="">Wet Food</a></li>
-                <li><a href="">Puppy Food</a></li>
-                <li><a href="">Vet-Authorised Diets</a></li>
-                <li><a href="">Fresh & Frozen</a></li>
-                <li><a href="">Food Toppers</a></li>
-                <li><a href="">Shop All Dog Food</a></li>
-              </ul>
-              <ul>
-                <h4>Treats</h4>
-                <li><a href="#">Freeze Dried Treats</a></li>
-                <li><a href="#">Bones, Bully Sticks & Chews</a></li>
-                <li><a href="#">Training Treats</a></li>
-                <li><a href="#">Soft & Chewy Treats</a></li>
-                <li><a href="#">Biscuits Cookies, Bakery & Snacks</a></li>
-                <li><a href="#">Dental Treats</a></li>
-                <li><a href="#">Puppy Treats</a></li>
-                <li><a href="#">Jerky Treats</a></li>
-                <li><a href="#">Shop All Dog Treats</a></li>
-              </ul>
-              <ul>
-                <h4>Supplies</h4>
-                <li><a href="#">Collars, Harnesses & Leashes</a></li>
-                <li><a href="#">Toys</a></li>
-                <li><a href="#">Crates, Gates & Containment</a></li>
-                <li><a href="#">Beds & Furniture</a></li>
-                <li><a href="#">Grooming Supplies</a></li>
-                <li><a href="#">Clothing & Shoes</a></li>
-                <li><a href="#">Bowls & Automatic Feeders</a></li>
-                <li><a href="#">Carriers & Travel</a></li>
-                <li><a href="#">Cleaning & Potty</a></li>
-                <li><a href="#">Training & Behavior</a></li>
-                <li><a href="#">Puppy Supplies</a></li>
-              </ul>
-              <ul>
-                <h4>Health & Pharmacy</h4>
-                <li><a href="#">Flea & Tick</a></li>
-                <li><a href="#">Vitamins & Supplements</a></li>
-                <li><a href="#">Pharmacy</a></li>
-                <li><a href="#">Health & Wellness</a></li>
-                <li><a href="#">Heartworm & Parasite Care</a></li>
-                <li><a href="#">Allergy Relief</a></li>
-                <li><a href="#">Anxiety & Calming</a></li>
-                <li><a href="#">Arthritis & Pain Relief</a></li>
-              </ul>
-              <ul>
-                <h4>New & Featured</h4>
-                <li><a href="#">Dog Deals</a></li>
-                <li><a href="#">Clearance</a></li>
-                <li><a href="#">Spring Collection Shop</a></li>
-                <li><a href="#">New Pet</a></li>
-                <li><a href="#">Sports Shop</a></li>
-                <li><a href="#">Puppy Supplies</a></li>
-                <li><a href="#">New & Trending</a></li>
-              </ul>
-            </div>
-          </div>
-        </section>
       </nav>
     </header>
     <main>
       <!-- OVERLAY -->
-      <div id="overlay" class="hidden"></div>
+      <div id="overlay"></div>
       <!-- HERO SECTION -->
       <section>
         <div class="hero container">

@@ -12,10 +12,129 @@ demoCloseBtn.addEventListener("click", () => {
 const searchInput = document.getElementById("searchbar");
 const searchDropdown = document.getElementById("search-bar-dropdown");
 const overlay = document.getElementById("overlay");
+const searchList = document.getElementById("search-list");
+const searchTitle = document.getElementById("search-title");
+
+const defaultSuggestions = [
+  {
+    name: "dog food",
+    link: "dog-deals.html",
+    disabled: false,
+  },
+  {
+    name: "fish",
+    disabled: true,
+  },
+  {
+    name: "cat food",
+    disabled: true,
+  },
+  {
+    name: "dog toys",
+    link: "dog-deals.html",
+    disabled: false,
+  },
+  {
+    name: "hamster sweater",
+    disabled: true,
+  },
+  {
+    name: "paw balm",
+    disabled: true,
+  },
+  {
+    name: "dog treats",
+    link: "dog-deals.html",
+    disabled: false,
+  },
+  {
+    name: "cat toy",
+    disabled: true,
+  },
+  {
+    name: "dog collar",
+    link: "dog-deals.html",
+    disabled: false,
+  },
+  {
+    name: "dog bed",
+    link: "dog-deals.html",
+    disabled: false,
+  },
+  {
+    name: "dog harness",
+    link: "dog-deals.html",
+    disabled: false,
+  },
+];
+
+function renderSuggestions(suggestions) {
+  searchList.innerHTML = "";
+
+  searchTitle.style.display = "block";
+
+  suggestions.forEach((suggestion) => {
+    const suggestionItem = document.createElement("li");
+
+    suggestionItem.innerHTML = `
+    <div class="search-item">
+    <a href="${suggestion.link}">
+    <i class="bi bi-search"></i>
+    ${suggestion.name}
+    </a>
+    <i class="bi bi-arrow-up-left"></i>
+    </div>`;
+
+    const link = suggestionItem.querySelector("a");
+
+    if (suggestion.disabled === true) {
+      link.classList.add("disabled-link");
+    }
+
+    searchList.appendChild(suggestionItem);
+  });
+}
 
 searchInput.addEventListener("focus", () => {
   searchDropdown.classList.remove("hidden");
-  overlay.classList.remove("hidden");
+  overlay.classList.add("active");
+
+  renderSuggestions(defaultSuggestions);
+});
+
+function tryDogMessage() {
+  searchList.innerHTML = "";
+
+  searchTitle.style.display = "none";
+
+  const tryDogSuggestion = document.createElement("li");
+
+  tryDogSuggestion.innerHTML = `
+  <div class="empty-state">
+      <h4> ૮₍ • ᴥ • ₎ა  Try searching for dog items</h4>
+  </div>
+  `;
+
+  searchList.appendChild(tryDogSuggestion);
+}
+
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value;
+  const valueLower = value.toLowerCase();
+
+  if (valueLower === "") {
+    renderSuggestions(defaultSuggestions);
+    return;
+  }
+
+  if (valueLower.startsWith("do")) {
+    const filteredSuggestions = defaultSuggestions.filter((suggestion) =>
+      suggestion.name.toLowerCase().startsWith(valueLower),
+    );
+    renderSuggestions(filteredSuggestions);
+  } else {
+    tryDogMessage();
+  }
 });
 
 const searchBarNav = document.getElementById("search-bar-nav");
@@ -23,8 +142,26 @@ const searchBarNav = document.getElementById("search-bar-nav");
 document.addEventListener("click", (event) => {
   if (!searchBarNav.contains(event.target)) {
     searchDropdown.classList.add("hidden");
-    overlay.classList.add("hidden");
+    overlay.classList.remove("active");
   }
+});
+
+// MENU DROPDOWN
+
+const menuItem = document.getElementById("main-menu");
+const menuDropdown = document.getElementById("menu-dropdown");
+const menuHover = document.getElementById("menu-shop");
+
+menuItem.addEventListener("mouseenter", () => {
+  menuDropdown.classList.remove("hidden");
+  overlay.classList.add("active");
+  menuHover.style.backgroundColor = "#0056b7";
+});
+
+menuItem.addEventListener("mouseleave", () => {
+  menuDropdown.classList.add("hidden");
+  overlay.classList.remove("active");
+  menuHover.style.backgroundColor = "#0177FF";
 });
 
 // CAROUSEL FUNCTION
@@ -206,3 +343,15 @@ saleSectionCarouselBtn.addEventListener("click", () => {
     saleSectionBtnActive = true;
   }
 });
+
+// Product page
+
+// const mainProductCard = document.getElementById("main-product-card");
+
+// function renderProductCards(products) {
+//   const productItems = document.createElement("div");
+
+// productItems.innerHTML = `
+
+// `
+// }

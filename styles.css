@@ -90,7 +90,18 @@ button:hover,
   z-index: 5;
   top: 0;
   left: 0;
-  transition: opacity 0.6s ease;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .demo-message {
@@ -107,6 +118,23 @@ button:hover,
   border: none;
   background-color: transparent;
   color: white;
+}
+
+.disabled-link {
+  opacity: 0.6;
+  cursor: auto;
+}
+
+.disabled-link:hover {
+  cursor: auto;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  color: var(--primary-blue);
 }
 
 /* HEADER */
@@ -147,10 +175,6 @@ header {
   color: white;
   padding: 0 10px;
   font-weight: 500;
-}
-
-.pre-nav-links a:hover {
-  text-decoration: underline;
 }
 
 /* TOP NAVIGATION */
@@ -210,6 +234,8 @@ header {
   box-shadow: 0px 4px 8px 3px rgba(174, 174, 174, 0.51);
   position: absolute;
   width: inherit;
+  height: 265px;
+  overflow: hidden;
   z-index: 30;
   background-color: white;
 }
@@ -251,7 +277,16 @@ header {
 
 /* MAIN MENU */
 
-.main-menu ul a {
+#menu-shop {
+  position: relative;
+}
+
+.main-menu > li:hover {
+  cursor: pointer;
+}
+
+.main-menu-options > li > a,
+#menu-shop {
   color: white;
   font-weight: 600;
   letter-spacing: 2px;
@@ -262,13 +297,16 @@ header {
     background-color 0.2s ease;
 }
 
-.main-menu ul li a:hover,
 .carousel-next:hover {
   background-color: #0056b7;
   cursor: pointer;
 }
 
-.main-menu ul {
+.main-menu-options > li > a:hover {
+  background-color: #0056b7;
+}
+
+.main-menu-options {
   display: flex;
   justify-content: space-evenly;
   background-color: var(--primary-blue);
@@ -282,19 +320,18 @@ header {
   border-radius: 0 0 6px 6px;
   box-shadow: 0px 4px 8px 3px rgba(174, 174, 174, 0.51);
   display: flex;
+  position: absolute;
+  background-color: white;
+
+  position: absolute;
+  top: 100%;
+  left: 80px;
 }
 
 .pet-options ul a {
   color: black;
 }
 
-.pet-options ul li:hover {
-  background-color: white;
-}
-
-.pet-options ul li:hover a {
-  color: var(--primary-blue);
-}
 .pet-options ul {
   background-color: var(--light-blue-bg);
   padding: 10px 0;
@@ -310,6 +347,11 @@ header {
 
 .dog-options {
   display: flex;
+  padding: 10px;
+}
+
+.dog-options ul {
+  padding: 10px;
 }
 
 .dog-options ul h4 {
@@ -329,6 +371,19 @@ header {
 .dog-options ul li a:hover {
   color: var(--primary-blue);
   text-decoration: underline;
+}
+
+.pet-options li:first-child {
+  cursor: pointer;
+  background-color: white;
+}
+
+.pet-options li:first-child a {
+  color: var(--primary-blue);
+}
+
+.pet-options li:not(:first-child) {
+  opacity: 0.6;
 }
 
 /* HERO */
@@ -437,7 +492,7 @@ header {
 /* PET CARROUSEL */
 
 .pet-carrousel {
-  margin-top: 80px;
+  margin-top: 40px;
   background-color: var(--light-bg);
   padding: 5px 0;
 }
@@ -495,6 +550,12 @@ header {
 }
 
 /* SALE SECTION  */
+
+.sale-section {
+  padding: 30px 20px 0;
+  margin-top: 10px;
+  /* background-color: red; */
+}
 
 .sale-section-content {
   background-color: var(--light-bg);
@@ -611,6 +672,7 @@ header {
 .top-deals-section {
   text-align: center;
   margin: 50px 0;
+  padding: 10px;
 }
 
 .top-deals-cards {
@@ -890,4 +952,20 @@ footer {
 .trademark {
   text-align: center;
   padding: 10px 0;
+}
+
+/* Dog Page */
+
+.product-hero {
+  /* height: 300px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-bg);
+  overflow: hidden;
+}
+
+.product-hero > .hero-content > h3,
+p {
+  color: black;
 }
