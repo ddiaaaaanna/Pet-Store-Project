@@ -24,68 +24,63 @@
   <body>
     <div class="demo-message" id="demo-message">
       <strong
-        >🐾 Demo version: Only the Dog section and product page are fully
-        implemented. Try exploring Dog → Food to see the shopping flow.</strong
+        >🐾 Demo version: This is a front-end landing page demo. Some sections
+        are non-functional and for presentation purposes only.</strong
       >
       <button id="demo-close-btn">x</button>
     </div>
     <!-- HEADER -->
     <header>
       <div class="announcement-bar">
-        <a href="dog-deals.html">
-          Anything for Dogs Deals: Save on food, toys & more* >
-        </a>
+        <p>Anything for Dogs Deals: Save on food, toys & more* ></p>
       </div>
       <div class="divider-line"></div>
       <div class="pre-nav-links flex-container">
         <div class="links-left">
           <a
             href="https://sos-gyvunai.lt/"
-            target="”_blank”"
+            target="_blank"
             id="header-adoption-btn"
             ><i class="bi bi-house-heart"></i>Find a Forever Home</a
           >
-          <a href="#" class="disabled-link"
-            ><i class="bi bi-geo-alt"></i>Store locator</a
-          >
+          <span><i class="bi bi-geo-alt"></i>Store locator</span>
         </div>
         <div class="links-right">
-          <a href="#" class="disabled-link">Track your order</a>
+          <span>Track your order</span>
           <span>|</span>
-          <a href="#" class="disabled-link">Grooming services</a>
+          <span>Grooming services</span>
           <span>|</span>
-          <a href="#" class="disabled-link">Gift Card</a>
+          <span>Gift Card</span>
         </div>
       </div>
       <div class="divider-line"></div>
-      <nav class="flex-container top-nav">
-        <a href="index.html" class="website-header">
-          <img src="./Images/petstoplogo.png" alt="PETSTOP logo" />
-        </a>
-        <!-- SEARCH BAR -->
-        <div class="search-bar-nav" id="search-bar-nav">
-          <input
-            type="text"
-            name="searchbar"
-            id="searchbar"
-            placeholder="Search..."
-          />
-          <img
-            src=".//Images/hero-img/hero-search-icon.png"
-            alt="Magnifying glass icon"
-          />
-          <!-- SEARCH SUGGESTIONS DROPDOWN -->
-          <div id="search-bar-dropdown" class="search-bar-dropdown hidden">
-            <h6 id="search-title">Popular searches</h6>
-            <ul id="search-list"></ul>
+      <div class="container">
+        <nav class="flex-container top-nav">
+          <a href="index.html" class="website-header">
+            <img src="./Images/petstoplogo.png" alt="PetStop logo" />
+          </a>
+          <!-- SEARCH BAR -->
+          <div class="search-bar-nav" id="search-bar-nav">
+            <input
+              type="text"
+              name="searchbar"
+              id="searchbar"
+              placeholder="Search..."
+            />
+            <img src=".//Images/hero-img/hero-search-icon.png" alt="" />
+            <!-- SEARCH SUGGESTIONS DROPDOWN -->
+            <div id="search-bar-dropdown" class="search-bar-dropdown hidden">
+              <p id="search-title">Popular searches</p>
+              <ul id="search-list"></ul>
+            </div>
           </div>
-        </div>
-        <div class="header-actions">
-          <i class="bi bi-heart"></i>
-          <i class="bi bi-person"></i>
-          <i class="bi bi-bag-heart"></i>
-        </div>
-      </nav>
+          <div class="header-actions">
+            <i class="bi bi-heart"></i>
+            <i class="bi bi-person"></i>
+            <i class="bi bi-bag-heart"></i>
+          </div>
+        </nav>
+      </div>
       <!-- NEW MAIN MENU -->
       <nav class="main-nav">
         <div class="main-menu">
@@ -97,7 +92,7 @@
                 <div class="shop-dropdown container">
                   <div class="pet-options">
                     <ul>
-                      <li><a href="">Dog</a></li>
+                      <li>Dog</li>
                       <li>Cat</li>
                       <li>Fish</li>
                       <li>Bird</li>
@@ -109,93 +104,71 @@
                   </div>
                   <div class="dog-options">
                     <ul>
-                      <h4>Food</h4>
-                      <li><a href="dog-deals.html">Dry Food</a></li>
-                      <li><a href="dog-deals.html">Wet Food</a></li>
-                      <li><a href="dog-deals.html">Puppy Food</a></li>
-                      <li><a href="dog-deals.html">Vet-Authorised Diets</a></li>
-                      <li><a href="dog-deals.html">Fresh & Frozen</a></li>
-                      <li><a href="dog-deals.html">Food Toppers</a></li>
-                      <li><a href="dog-deals.html">Shop All Dog Food</a></li>
+                      <li class="menu-title">Food</li>
+                      <li>Dry Food</li>
+                      <li>Wet Food</li>
+                      <li>Puppy Food</li>
+                      <li>Vet-Authorised Diets</li>
+                      <li>Fresh & Frozen</li>
+                      <li>Food Toppers</li>
+                      <li>Shop All Dog Food</li>
                     </ul>
                     <ul>
-                      <h4>Treats</h4>
-                      <li><a href="dog-deals.html">Freeze Dried Treats</a></li>
-                      <li>
-                        <a href="dog-deals.html">Bones, Bully Sticks & Chews</a>
-                      </li>
-                      <li><a href="dog-deals.html">Training Treats</a></li>
-                      <li><a href="dog-deals.html">Soft & Chewy Treats</a></li>
-                      <li>
-                        <a href="dog-deals.html"
-                          >Biscuits Cookies, Bakery & Snacks</a
-                        >
-                      </li>
-                      <li><a href="dog-deals.html">Dental Treats</a></li>
-                      <li><a href="dog-deals.html">Puppy Treats</a></li>
-                      <li><a href="dog-deals.html">Jerky Treats</a></li>
-                      <li><a href="dog-deals.html">Shop All Dog Treats</a></li>
+                      <li class="menu-title">Treats</li>
+                      <li>Freeze Dried Treats</li>
+                      <li>Bones, Bully Sticks & Chews</li>
+                      <li>Training Treats</li>
+                      <li>Soft & Chewy Treats</li>
+                      <li>Biscuits Cookies, Bakery & Snacks</li>
+                      <li>Dental Treats</li>
+                      <li>Puppy Treats</li>
+                      <li>Jerky Treats</li>
+                      <li>Shop All Dog Treats</li>
                     </ul>
                     <ul>
-                      <h4>Supplies</h4>
-                      <li>
-                        <a href="dog-deals.html"
-                          >Collars, Harnesses & Leashes</a
-                        >
-                      </li>
-                      <li><a href="dog-deals.html">Toys</a></li>
-                      <li>
-                        <a href="dog-deals.html">Crates, Gates & Containment</a>
-                      </li>
-                      <li><a href="dog-deals.html">Beds & Furniture</a></li>
-                      <li><a href="dog-deals.html">Grooming Supplies</a></li>
-                      <li><a href="dog-deals.html">Clothing & Shoes</a></li>
-                      <li>
-                        <a href="dog-deals.html">Bowls & Automatic Feeders</a>
-                      </li>
-                      <li><a href="dog-deals.html">Carriers & Travel</a></li>
-                      <li><a href="dog-deals.html">Cleaning & Potty</a></li>
-                      <li><a href="dog-deals.html">Training & Behavior</a></li>
-                      <li><a href="dog-deals.html">Puppy Supplies</a></li>
+                      <li class="menu-title">Supplies</li>
+                      <li>Collars, Harnesses & Leashes</li>
+                      <li>Toys</li>
+                      <li>Crates, Gates & Containment</li>
+                      <li>Beds & Furniture</li>
+                      <li>Grooming Supplies</li>
+                      <li>Clothing & Shoes</li>
+                      <li>Bowls & Automatic Feeders</li>
+                      <li>Carriers & Travel</li>
+                      <li>Cleaning & Potty</li>
+                      <li>Training & Behavior</li>
+                      <li>Puppy Supplies</li>
                     </ul>
                     <ul>
-                      <h4>Health & Pharmacy</h4>
-                      <li><a href="dog-deals.html">Flea & Tick</a></li>
-                      <li>
-                        <a href="dog-deals.html">Vitamins & Supplements</a>
-                      </li>
-                      <li><a href="dog-deals.html">Pharmacy</a></li>
-                      <li><a href="dog-deals.html">Health & Wellness</a></li>
-                      <li>
-                        <a href="dog-deals.html">Heartworm & Parasite Care</a>
-                      </li>
-                      <li><a href="dog-deals.html">Allergy Relief</a></li>
-                      <li><a href="dog-deals.html">Anxiety & Calming</a></li>
-                      <li>
-                        <a href="dog-deals.html">Arthritis & Pain Relief</a>
-                      </li>
+                      <li class="menu-title">Health & Pharmacy</li>
+                      <li>Flea & Tick</li>
+                      <li>Vitamins & Supplements</li>
+                      <li>Pharmacy</li>
+                      <li>Health & Wellness</li>
+                      <li>Heartworm & Parasite Care</li>
+                      <li>Allergy Relief</li>
+                      <li>Anxiety & Calming</li>
+                      <li>Arthritis & Pain Relief</li>
                     </ul>
                     <ul>
-                      <h4>New & Featured</h4>
-                      <li><a href="dog-deals.html">Dog Deals</a></li>
-                      <li><a href="dog-deals.html">Clearance</a></li>
-                      <li>
-                        <a href="dog-deals.html">Spring Collection Shop</a>
-                      </li>
-                      <li><a href="dog-deals.html">New Pet</a></li>
-                      <li><a href="dog-deals.html">Sports Shop</a></li>
-                      <li><a href="dog-deals.html">Puppy Supplies</a></li>
-                      <li><a href="dog-deals.html">New & Trending</a></li>
+                      <li class="menu-title">New & Featured</li>
+                      <li>Dog Deals</li>
+                      <li>Clearance</li>
+                      <li>Spring Collection Shop</li>
+                      <li>New Pet</li>
+                      <li>Sports Shop</li>
+                      <li>Puppy Supplies</li>
+                      <li>New & Trending</li>
                     </ul>
                   </div>
                 </div>
               </section>
             </li>
             <li><a href="#brands">Brands</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Pharmacy</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pet-carrousel">Pets</a></li>
             <li><a href="#new-pet">New Pet</a></li>
-            <li><a href="#">Deals</a></li>
+            <li><a href="#sale-section">Deals</a></li>
           </ul>
         </div>
       </nav>
@@ -212,108 +185,86 @@
               Best deals <br />
               unleashed
             </h1>
-            <h5>
+            <p>
               Get ready for spring adventures outdoors <br />
               with treats, accessories & more
-            </h5>
-            <a href="dog-deals.html" class="hero-btn">Shop now</a>
+            </p>
+            <button class="hero-btn">Shop now</button>
           </div>
           <!-- bone txt -->
           <div class="hero-badge">
             <h4>Anything for <br /><span class="h4-dogs">Dogs</span></h4>
-            <img src="./Images/hero-img/hero-badge-bone.png" alt="dog bone" />
+            <img src="./Images/hero-img/hero-badge-bone.png" alt="" />
             <p>Deals</p>
           </div>
           <!-- img -->
           <div class="hero-media">
             <img
               src="./Images/hero-img/hero-img.jpg"
-              alt="Dog driving in the car looking out the window"
+              alt="Dog looking out of a car window"
             />
           </div>
           <!--  -->
         </div>
       </section>
       <!-- PET-CARROUSEL -->
-      <section class="pet-carrousel">
+      <section class="pet-carrousel" id="pet-carrousel">
         <div class="container">
           <div class="section-header">
-            <h1>Shop by pet</h1>
+            <h2>Shop by pet</h2>
           </div>
           <div class="pet-carousel-container">
             <div class="pet-container">
               <div class="pet-card-container">
                 <div class="pet-card">
-                  <a href="dog-deals.html">
-                    <img
-                      src="./Images/pet-carousel/choices-dog.jpg"
-                      alt="Dog"
-                    />
-                    <p>Dog</p>
-                  </a>
+                  <img src="./Images/pet-carousel/choices-dog.jpg" alt="Dog" />
+                  <p>Dog</p>
                 </div>
                 <div class="pet-card">
-                  <a href="#">
-                    <img
-                      src="./Images/pet-carousel/choices-cat.jpg"
-                      alt="Cat"
-                    />
-                    <p>Cat</p>
-                  </a>
+                  <img src="./Images/pet-carousel/choices-cat.jpg" alt="Cat" />
+                  <p>Cat</p>
                 </div>
                 <div class="pet-card">
-                  <a href="#">
-                    <img
-                      src="./Images/pet-carousel/choices-fish.jpg"
-                      alt="Fish"
-                    />
-                    <p>Fish</p>
-                  </a>
+                  <img
+                    src="./Images/pet-carousel/choices-fish.jpg"
+                    alt="Fish"
+                  />
+                  <p>Fish</p>
                 </div>
                 <div class="pet-card">
-                  <a href="#">
-                    <img
-                      src="./Images/pet-carousel/choices-bird.jpg"
-                      alt="Bird"
-                    />
-                    <p>Bird</p>
-                  </a>
+                  <img
+                    src="./Images/pet-carousel/choices-bird.jpg"
+                    alt="Bird"
+                  />
+                  <p>Bird</p>
                 </div>
                 <div class="pet-card">
-                  <a href="#">
-                    <img
-                      src="./Images/pet-carousel/choices-reptile.jpg"
-                      alt="Reptile"
-                    />
-                    <p>Reptile</p>
-                  </a>
+                  <img
+                    src="./Images/pet-carousel/choices-reptile.jpg"
+                    alt="Reptile"
+                  />
+                  <p>Reptile</p>
                 </div>
                 <div class="pet-card">
-                  <a href="#">
-                    <img
-                      src="./Images/pet-carousel/choices-smallpet.jpg"
-                      alt="Small pet"
-                    />
-                    <p>Small pet</p>
-                  </a>
+                  <img
+                    src="./Images/pet-carousel/choices-smallpet.jpg"
+                    alt="Small pet"
+                  />
+                  <p>Small pet</p>
                 </div>
                 <div class="pet-card">
-                  <a href="#">
-                    <img
-                      src="./Images/pet-carousel/choices-backyard-pet.jpg"
-                      alt="Farm pet"
-                    />
-                    <p>Farm and backyard pet</p>
-                  </a>
+                  <img
+                    src="./Images/pet-carousel/choices-backyard-pet.jpg"
+                    alt="Farm pet"
+                  />
+                  <p>Farm and backyard pet</p>
                 </div>
                 <div class="pet-card">
-                  <a href="#">
-                    <img
-                      src="./Images/pet-carousel/choices-wildbird.jpg"
-                      alt="Wild bird"
-                    />
-                    <p>Wild bird</p>
-                  </a>
+                  <img
+                    src="./Images/pet-carousel/choices-wildbird.jpg"
+                    alt="Wild bird"
+                  />
+                  <p>Wild bird</p>
                 </div>
               </div>
             </div>
@@ -322,11 +273,11 @@
         </div>
       </section>
       <!-- SALE SECTION -->
-      <section class="sale-section">
+      <section class="sale-section" id="sale-section">
         <div class="container">
           <div class="section-header">
-            <h1>Featured Deals</h1>
-            <a href="#">View all</a>
+            <h2>Featured Deals</h2>
+            <p>View all</p>
           </div>
           <div class="sale-section-content">
             <div class="pet-carousel-container">
@@ -342,7 +293,7 @@
       <section class="container">
         <div class="shipping-section">
           <div class="shipping-section-txt">
-            <h1>Free Shipping on Orders €70+</h1>
+            <h2>Free Shipping on Orders €70+</h2>
             <p>
               Stock up on your pet’s favorite treats, toys, and essentials.
               Enjoy free shipping on orders over €70.
@@ -352,11 +303,11 @@
         </div>
       </section>
       <!-- TOP DEALS SECTION -->
-      <section class="top-deals-section">
-        <div class="container">
+      <section class="container">
+        <div class="top-deals-section">
           <div class="section-header">
-            <h1>Spring's top deals</h1>
-            <a href="#">Shop all</a>
+            <h2>Spring's top deals</h2>
+            <p>Shop all</p>
           </div>
           <div class="top-deals-cards">
             <!-- card -->
@@ -374,7 +325,7 @@
                 </div>
                 <img
                   src="./Images/deals-cards/deal-cards-1.png"
-                  alt="pet food"
+                  alt="Purina Pro Plan dry dog food"
                 />
               </div>
               <p>Premium pet food</p>
@@ -387,7 +338,7 @@
                 </div>
                 <img
                   src="./Images/deals-cards/deals-cards-2.png"
-                  alt="pet food"
+                  alt="Solo wet dog food with turkey"
                 />
               </div>
               <p>Premium wet dog and cat food</p>
@@ -400,7 +351,7 @@
                 </div>
                 <img
                   src="./Images/deals-cards/deals-cards-3.png"
-                  alt="pet medicine"
+                  alt="Bravecto tick treatment for dogs"
                 />
               </div>
               <p>Best tick prevention for dogs</p>
@@ -413,7 +364,7 @@
                 </div>
                 <img
                   src="./Images/deals-cards/deals-cards-4.png"
-                  alt="pet cleaning supply"
+                  alt="Stain and odour remover spray for pets"
                 />
               </div>
               <p>All stain and odour products</p>
@@ -433,11 +384,11 @@
       <section class="new-pet-section" id="new-pet">
         <div class="container">
           <div class="new-pet-section-header">
-            <h1><span class="title-accent">Welcome home</span> <br />shop</h1>
+            <h2><span class="title-accent">Welcome home</span> <br />shop</h2>
           </div>
           <div class="new-pet-section-content">
             <div class="new-pet-section-content-header">
-              <h2>New pet in the family?</h2>
+              <h3>New pet in the family?</h3>
               <p>
                 Begin your journey with everything conveniently in one place.
               </p>
@@ -445,26 +396,21 @@
             <div class="new-pets-cards">
               <!--  -->
               <div class="new-pet-card">
-                <a href="dog-deals.html">
-                  <div class="newpet-card-content">
-                    <h1 class="new-pet-name">Puppy</h1>
-                    <div class="img-circle">
-                      <img
-                        src="./Images/new-pet-section/puppy.jpg"
-                        alt="Labrador puppy"
-                      />
-                    </div>
+                <div class="newpet-card-content">
+                  <h3 class="new-pet-name">Puppy</h3>
+                  <div class="img-circle">
+                    <img src="./Images/new-pet-section/puppy.jpg" alt="Puppy" />
                   </div>
-                  <div class="card-label">
-                    <h3>Puppy Supplies</h3>
-                    <p>All the essentials for your new puppy.</p>
-                  </div>
-                </a>
+                </div>
+                <div class="card-label">
+                  <h3>Puppy Supplies</h3>
+                  <p>All the essentials for your new puppy.</p>
+                </div>
               </div>
               <!--  -->
               <div class="new-pet-card">
                 <div class="newpet-card-content">
-                  <h1 class="new-pet-name">Kitten</h1>
+                  <h3 class="new-pet-name">Kitten</h3>
                   <div class="img-circle">
                     <img
                       src="./Images/new-pet-section/kitten.jpg"
@@ -486,49 +432,49 @@
       <section class="featured-brands-section" id="brands">
         <div class="container">
           <div class="section-header">
-            <h1>Featured Brands</h1>
+            <h2>Featured Brands</h2>
           </div>
           <div class="featured-brands-cards">
             <!--  -->
             <div class="featured-brand-card">
               <img
                 src="./Images/brands-logos/brands-logo1.png"
-                alt="Pet food brand logo"
+                alt="Hill's Science Diet logo"
               />
             </div>
             <!--  -->
             <div class="featured-brand-card">
               <img
                 src="./Images/brands-logos/brands-logo2.png"
-                alt="Pet food brand logo"
+                alt="Purina Pro Plan logo"
               />
             </div>
             <!--  -->
             <div class="featured-brand-card">
               <img
                 src="./Images/brands-logos/brands-logo3.png"
-                alt="Pet food brand logo"
+                alt="Orijen logo"
               />
             </div>
             <!--  -->
             <div class="featured-brand-card">
               <img
                 src="./Images/brands-logos/brands-logo4.png"
-                alt="Pet food brand logo"
+                alt="Royal Canin logo"
               />
             </div>
             <!--  -->
             <div class="featured-brand-card">
               <img
                 src="./Images/brands-logos/brands-logo5.png"
-                alt="Pet food brand logo"
+                alt="Ziwi logo"
               />
             </div>
             <!--  -->
             <div class="featured-brand-card">
               <img
                 src="./Images/brands-logos/brands-logo6.png"
-                alt="Pet food brand logo"
+                alt="Advance logo"
               />
             </div>
             <!--  -->
@@ -536,10 +482,10 @@
         </div>
       </section>
       <!-- BENEFITS SECTION -->
-      <section class="benefits-section">
+      <section class="benefits-section" id="services">
         <div class="container">
           <div class="benefits-section-title">
-            <h1>Pet care made easy</h1>
+            <h2>Pet care made easy</h2>
             <p>Free shipping, fast delivery, and vet-approved products.</p>
           </div>
           <div class="benefits-cards">
@@ -547,7 +493,7 @@
             <div class="benefits-card">
               <img
                 src="./Images/shopping benefits img/shopping-benefits-1"
-                alt="Free shipping on orders over €70"
+                alt=""
               />
               <h3>Free Shipping</h3>
               <p>Orders over €70</p>
@@ -556,7 +502,7 @@
             <div class="benefits-card">
               <img
                 src="./Images/shopping benefits img/shopping-benefits-2"
-                alt="Fast delivery within 1–3 business days"
+                alt=""
               />
               <h3>Fast Delivery</h3>
               <p>1–3 business days</p>
@@ -565,7 +511,7 @@
             <div class="benefits-card">
               <img
                 src="./Images/shopping benefits img/shopping-benefits-3"
-                alt="Vet-approved pet products"
+                alt=""
               />
               <h3>Vet-approved products</h3>
               <p>Expert-recommended pet care</p>
@@ -574,7 +520,7 @@
             <div class="benefits-card">
               <img
                 src="./Images/shopping benefits img/shopping-benefits-4"
-                alt="Easy returns and hassle-free refunds"
+                alt=""
               />
               <h3>Easy returns</h3>
               <p>Return within 30 days</p>
@@ -587,8 +533,9 @@
     <footer>
       <div class="footer-s-nav">
         <a href="index.html" class="website-header">
-          <img src="./Images/petstoplogo-white.png" alt="PETSTOP logo" />
+          <img src="./Images/petstoplogo-white.png" alt="PetStop logo" />
         </a>
+
         <div class="footer-social-links">
           <p>Follow us:</p>
           <i class="bi bi-facebook"></i>
@@ -609,25 +556,28 @@
               receive marketing communications at the email address provided.
             </p>
           </div>
-          <button type="submit" class="newsletter-subscribe-btn">
+          <button type="button" class="newsletter-subscribe-btn">
             SUBSCRIBE
           </button>
         </div>
         <div class="footer-links">
           <div class="footer-badges">
-            <img src="./Images/footer-badges.png" alt="Certificate badges" />
+            <img
+              src="./Images/footer-badges.png"
+              alt="PetSafe Certified and PetTrust Verified badges"
+            />
           </div>
           <div class="footer-list-container">
             <ul class="footer-links-list">
-              <li><a href="#">Track your order</a></li>
-              <li><a href="#">Help center</a></li>
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">About </a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Return Policy</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Gift Card</a></li>
-              <li><a href="#">Privacy</a></li>
+              <li>Track your order</li>
+              <li>Help center</li>
+              <li>Contact us</li>
+              <li>About</li>
+              <li>Careers</li>
+              <li>Return Policy</li>
+              <li>FAQ</li>
+              <li>Gift Card</li>
+              <li>Privacy</li>
             </ul>
           </div>
         </div>
@@ -635,5 +585,8 @@
       <div class="divider-line"></div>
       <p class="trademark">2026 @ Pet Stop</p>
     </footer>
+    <button class="hidden" id="scrollToTopBtn">
+      <i class="bi bi-arrow-up-square"></i>
+    </button>
   </body>
 </html>

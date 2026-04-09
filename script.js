@@ -4,7 +4,7 @@ const demoCloseBtn = document.getElementById("demo-close-btn");
 const demoMessage = document.getElementById("demo-message");
 
 demoCloseBtn.addEventListener("click", () => {
-  demoMessage.classList.add("hidden");
+  demoMessage.classList.add("slide-up");
 });
 
 // SEARCH BAR DROPDOWN
@@ -18,53 +18,36 @@ const searchTitle = document.getElementById("search-title");
 const defaultSuggestions = [
   {
     name: "dog food",
-    link: "dog-deals.html",
-    disabled: false,
-  },
-  {
-    name: "fish",
-    disabled: true,
   },
   {
     name: "cat food",
-    disabled: true,
   },
   {
     name: "dog toys",
-    link: "dog-deals.html",
-    disabled: false,
-  },
-  {
-    name: "hamster sweater",
-    disabled: true,
-  },
-  {
-    name: "paw balm",
-    disabled: true,
   },
   {
     name: "dog treats",
-    link: "dog-deals.html",
-    disabled: false,
   },
   {
     name: "cat toy",
-    disabled: true,
   },
   {
     name: "dog collar",
-    link: "dog-deals.html",
-    disabled: false,
   },
   {
     name: "dog bed",
-    link: "dog-deals.html",
-    disabled: false,
   },
   {
     name: "dog harness",
-    link: "dog-deals.html",
-    disabled: false,
+  },
+  {
+    name: "cat litter",
+  },
+  {
+    name: "cat tree",
+  },
+  {
+    name: "cat treats",
   },
 ];
 
@@ -78,18 +61,13 @@ function renderSuggestions(suggestions) {
 
     suggestionItem.innerHTML = `
     <div class="search-item">
-    <a href="${suggestion.link}">
+    <span>
     <i class="bi bi-search"></i>
     ${suggestion.name}
-    </a>
+    </span>
     <i class="bi bi-arrow-up-left"></i>
-    </div>`;
-
-    const link = suggestionItem.querySelector("a");
-
-    if (suggestion.disabled === true) {
-      link.classList.add("disabled-link");
-    }
+    </div>
+    `;
 
     searchList.appendChild(suggestionItem);
   });
@@ -102,20 +80,20 @@ searchInput.addEventListener("focus", () => {
   renderSuggestions(defaultSuggestions);
 });
 
-function tryDogMessage() {
+function throwNoResults() {
   searchList.innerHTML = "";
 
   searchTitle.style.display = "none";
 
-  const tryDogSuggestion = document.createElement("li");
+  const showNoResults = document.createElement("li");
 
-  tryDogSuggestion.innerHTML = `
+  showNoResults.innerHTML = `
   <div class="empty-state">
-      <h4> ૮₍ • ᴥ • ₎ა  Try searching for dog items</h4>
+      <h4> ૮₍ • ᴥ • ₎ა No results yet — try another search</h4>
   </div>
   `;
 
-  searchList.appendChild(tryDogSuggestion);
+  searchList.appendChild(showNoResults);
 }
 
 searchInput.addEventListener("input", () => {
@@ -127,13 +105,14 @@ searchInput.addEventListener("input", () => {
     return;
   }
 
-  if (valueLower.startsWith("do")) {
-    const filteredSuggestions = defaultSuggestions.filter((suggestion) =>
-      suggestion.name.toLowerCase().startsWith(valueLower),
-    );
-    renderSuggestions(filteredSuggestions);
+  const filteredSuggestions = defaultSuggestions.filter((suggestion) =>
+    suggestion.name.toLowerCase().includes(valueLower),
+  );
+
+  if (filteredSuggestions.length === 0) {
+    throwNoResults();
   } else {
-    tryDogMessage();
+    renderSuggestions(filteredSuggestions);
   }
 });
 
@@ -168,24 +147,32 @@ menuItem.addEventListener("mouseleave", () => {
 
 const carrouselNextBtn = document.getElementById("carousel-next");
 const petCardContainer = document.querySelector(".pet-card-container");
+const petCard = document.querySelector(".pet-card");
 
-let carrouselBtnActive = true;
+let isShifted = false;
 
 carrouselNextBtn.addEventListener("click", () => {
-  if (carrouselBtnActive) {
-    petCardContainer.style.transform = "translateX(-435px)";
+  const cardWidth = petCard.offsetWidth;
+  const gap = 25;
+
+  const cardsToScroll = 2;
+
+  const moveAmount = (cardWidth + gap) * cardsToScroll;
+
+  if (!isShifted) {
+    petCardContainer.style.transform = `translateX(-${moveAmount}px)`;
     carrouselNextBtn.textContent = "<";
 
     carrouselNextBtn.style.left = "-12px";
     carrouselNextBtn.style.right = "auto";
-    carrouselBtnActive = false;
+    isShifted = true;
   } else {
     petCardContainer.style.transform = "translateX(0px)";
     carrouselNextBtn.textContent = ">";
 
     carrouselNextBtn.style.left = "auto";
     carrouselNextBtn.style.right = "-13px";
-    carrouselBtnActive = true;
+    isShifted = false;
   }
 });
 
@@ -198,12 +185,16 @@ const petSaleProducts = [
     name: "Chewy Chicken Dog Treats",
     rating: 4.7,
     originalPrice: 14.99,
+    link: "dog-deals.html",
+    category: "dog",
   },
   {
     photo: "https://m.media-amazon.com/images/I/61BUs+8RMrL.jpg",
     name: "Monkey Rope Tug Dog Toy",
     rating: 4.5,
     originalPrice: 19.99,
+    link: "dog-deals.html",
+    category: "dog",
   },
   {
     photo:
@@ -211,6 +202,8 @@ const petSaleProducts = [
     name: "Salmon Crunch Cat Treats",
     rating: 4.8,
     originalPrice: 9.99,
+    link: null,
+    category: "cat",
   },
   {
     photo:
@@ -218,6 +211,8 @@ const petSaleProducts = [
     name: "Cat Scratcher Tunnel",
     rating: 4.4,
     originalPrice: 49.99,
+    link: null,
+    category: "cat",
   },
   {
     photo:
@@ -225,12 +220,16 @@ const petSaleProducts = [
     name: "Bird Seed Blend Premium",
     rating: 4.6,
     originalPrice: 13.99,
+    link: null,
+    category: "bird",
   },
   {
     photo: "https://m.media-amazon.com/images/I/91fcO12KcCL.jpg",
     name: "Small Pet Hay Bundle",
     rating: 4.3,
     originalPrice: 8.99,
+    link: null,
+    category: "small pet",
   },
   {
     photo:
@@ -238,6 +237,8 @@ const petSaleProducts = [
     name: "Plaid Dog Sweater",
     rating: 4.2,
     originalPrice: 39.99,
+    link: "dog-deals.html",
+    category: "dog",
   },
   {
     photo:
@@ -245,6 +246,8 @@ const petSaleProducts = [
     name: "Catnip Valentine Bear Toy",
     rating: 4.1,
     originalPrice: 12.99,
+    link: null,
+    category: "cat",
   },
   {
     photo:
@@ -252,12 +255,16 @@ const petSaleProducts = [
     name: "Reptile Heat Lamp Bulb",
     rating: 4.5,
     originalPrice: 18.99,
+    link: null,
+    category: "reptile",
   },
   {
     photo: "https://www.kroger.com/product/images/large/front/0004679877035",
     name: "Aquarium Floating Fish Pellets",
     rating: 4.6,
     originalPrice: 10.99,
+    link: null,
+    category: "fish",
   },
 ];
 
@@ -269,7 +276,7 @@ function renderSaleItems(items) {
     div.className = "sale-section-card";
 
     div.innerHTML = `
-    <img src = ${item.photo} alt = "Pet store sale item">
+    <img src = "${item.photo}" alt = "Pet store sale item">
     <h3>${item.name}</h3>
     <p class="item-rating">${renderRatingStars(item.rating)} (${item.rating})</p>
     <p><span class="original-price">${item.originalPrice}€</span> <span class="sale-price">${calculateSalePrice(item.originalPrice)}€</span></p>
@@ -308,31 +315,35 @@ function renderRatingStars(rating) {
 }
 
 function calculateSalePrice(originalPrice) {
-  const saleAmount = 50;
-
-  const salePrice = (originalPrice / 100) * saleAmount;
-
-  const newAmount = originalPrice - salePrice;
-
-  return newAmount.toFixed(2);
+  return (originalPrice * 0.5).toFixed(2);
 }
 
 // SALE SECTION CAROUSEL
 
 const saleSectionCarouselBtn = document.getElementById("carousel-next-sale");
 const saleCardSection = document.getElementById("sale-section-cards");
+const container = document.getElementById("sale-section-container");
+const saleCard = document.querySelector(".sale-section-card");
 
-let saleSectionBtnActive = true;
+let isMoved = false;
 
 saleSectionCarouselBtn.addEventListener("click", () => {
-  if (saleSectionBtnActive) {
-    saleCardSection.style.transform = "translateX(-695px)";
+  const cardWidth = saleCard.offsetWidth;
+  const gap = 20;
+
+  const containerWidth = container.offsetWidth;
+
+  const visibleCards = Math.floor(containerWidth / (cardWidth + gap));
+  const moveAmount = (cardWidth + gap) * visibleCards;
+
+  if (!isMoved) {
+    saleCardSection.style.transform = `translateX(-${moveAmount}px)`;
     saleSectionCarouselBtn.textContent = "<";
 
     saleSectionCarouselBtn.style.left = "-12px";
     saleSectionCarouselBtn.style.right = "auto";
 
-    saleSectionBtnActive = false;
+    isMoved = true;
   } else {
     saleCardSection.style.transform = "translateX(0px)";
     saleSectionCarouselBtn.textContent = ">";
@@ -340,18 +351,22 @@ saleSectionCarouselBtn.addEventListener("click", () => {
     saleSectionCarouselBtn.style.left = "auto";
     saleSectionCarouselBtn.style.right = "-26px";
 
-    saleSectionBtnActive = true;
+    isMoved = false;
   }
 });
 
-// Product page
+// SCROLL UP BTN LOGIC
 
-// const mainProductCard = document.getElementById("main-product-card");
+const scrollUpBtn = document.getElementById("scrollToTopBtn");
 
-// function renderProductCards(products) {
-//   const productItems = document.createElement("div");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollUpBtn.classList.remove("hidden");
+  } else {
+    scrollUpBtn.classList.add("hidden");
+  }
+});
 
-// productItems.innerHTML = `
-
-// `
-// }
+scrollUpBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
