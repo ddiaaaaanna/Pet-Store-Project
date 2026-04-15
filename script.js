@@ -145,36 +145,72 @@ menuItem.addEventListener("mouseleave", () => {
 
 // CAROUSEL FUNCTION
 
-const carrouselNextBtn = document.getElementById("carousel-next");
+const carouselNextBtn = document.getElementById("carousel-next");
+const carouselBackBtn = document.getElementById("carousel-back");
 const petCardContainer = document.querySelector(".pet-card-container");
-const petCard = document.querySelector(".pet-card");
+const petCarouselContainer = document.querySelector(".pet-container");
+const petCard = document.querySelectorAll(".pet-card");
 
-let isShifted = false;
+const totalCards = petCard.length;
 
-carrouselNextBtn.addEventListener("click", () => {
-  const cardWidth = petCard.offsetWidth;
-  const gap = 25;
+const cardWidth = petCard[0].offsetWidth;
+const containerWidth = petCarouselContainer.offsetWidth;
+const gap = 25;
 
-  const cardsToScroll = 2;
+const visibleCards = Math.floor(containerWidth / (cardWidth + gap));
 
-  const moveAmount = (cardWidth + gap) * cardsToScroll;
+const maxIndex = Math.max(0, totalCards - visibleCards);
 
-  if (!isShifted) {
-    petCardContainer.style.transform = `translateX(-${moveAmount}px)`;
-    carrouselNextBtn.textContent = "<";
+let currentIndex = 0;
 
-    carrouselNextBtn.style.left = "-12px";
-    carrouselNextBtn.style.right = "auto";
-    isShifted = true;
+function updateButtons() {
+  if (currentIndex === 0) {
+    carouselBackBtn.style.opacity = "0";
+    carouselBackBtn.style.pointerEvents = "none";
   } else {
-    petCardContainer.style.transform = "translateX(0px)";
-    carrouselNextBtn.textContent = ">";
-
-    carrouselNextBtn.style.left = "auto";
-    carrouselNextBtn.style.right = "-13px";
-    isShifted = false;
+    carouselBackBtn.style.opacity = "1";
+    carouselBackBtn.style.pointerEvents = "auto";
   }
+
+  if (currentIndex >= maxIndex) {
+    carouselNextBtn.style.opacity = "0";
+    carouselNextBtn.style.pointerEvents = "none";
+  } else {
+    carouselNextBtn.style.opacity = "1";
+    carouselNextBtn.style.pointerEvents = "auto";
+  }
+}
+
+carouselNextBtn.addEventListener("click", () => {
+  const cardsToScroll = 1;
+
+  currentIndex += cardsToScroll;
+
+  if (currentIndex > maxIndex) {
+    currentIndex = maxIndex;
+  }
+
+  const moveAmount = (cardWidth + gap) * currentIndex;
+
+  petCardContainer.style.transform = `translateX(-${moveAmount}px)`;
+
+  updateButtons();
 });
+
+carouselBackBtn.addEventListener("click", () => {
+  currentIndex -= 1;
+
+  if (currentIndex < 0) {
+    currentIndex = 0;
+  }
+
+  const moveAmount = (cardWidth + gap) * currentIndex;
+  petCardContainer.style.transform = `translateX(-${moveAmount}px)`;
+
+  updateButtons();
+});
+
+updateButtons();
 
 // PET SALE PRODUCTS
 

@@ -505,12 +505,12 @@ header {
   flex: 1;
 }
 
-/* PET CARROUSEL */
+/* PET carousel */
 
-.pet-carrousel {
+.pet-carousel {
+  padding: 30px 20px 0;
   margin-top: 40px;
   background-color: var(--light-bg);
-  padding: 5px 0;
 }
 
 .pet-card img {
@@ -548,13 +548,23 @@ header {
   top: 36%;
   border-radius: 60%;
   background-color: var(--primary-blue-hover);
-  padding: 15px 20px;
   color: white;
   border: none;
   font-size: 18px;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease;
+}
+
+#carousel-back {
+  /* opacity: 0;
+  pointer-events: none;
+ */
+  position: absolute;
+  left: -13px;
+
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .pet-carousel-container {
@@ -682,7 +692,7 @@ header {
 
 .top-deals-cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   margin-top: 40px;
   gap: 30px;
@@ -978,29 +988,70 @@ footer {
   color: var(--primary-blue);
 }
 
+.burger-menu {
+  display: none;
+}
+
 /* =====================
-   TABLET (max 768px)
+   TABLET (max 1024px)
    ===================== */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* HEADER */
+
+  .burger {
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .burgermenu-header {
+    padding: 10px 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid red;
+    position: relative;
+  }
+
+  .burgermenu-header button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    font-weight: 500;
+    right: 1px;
+    top: 9px;
+  }
+
+  .burger-menu {
+    position: fixed;
+    background-color: white;
+    z-index: 0;
+  }
+
+  .burger-menu-options li img {
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+  }
+
   .pre-nav-links {
     font-size: 13px;
     padding: 8px 12px;
-  }
-
-  .links-right {
-    display: none;
+    justify-content: space-between;
   }
 
   .top-nav {
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     margin: 0 12px;
     gap: 10px;
   }
 
   .search-bar-nav {
-    width: 100%;
+    flex: 1;
+    max-width: 400px;
     padding: 8px;
   }
 
@@ -1009,7 +1060,7 @@ footer {
   }
 
   .search-bar-nav img {
-    right: -10px;
+    right: 5px;
   }
 
   .header-actions i {
@@ -1017,74 +1068,84 @@ footer {
     font-size: 1.3em;
   }
 
+  .header-actions {
+    display: flex;
+  }
+
   /* MAIN MENU */
-  .main-menu-options > li > a,
-  #menu-shop {
-    font-size: 15px;
-    padding: 10px 8px;
-    letter-spacing: 1px;
+  .main-menu {
+    display: none;
   }
 
   /* HERO */
+
   .hero {
-    flex-direction: column;
-    align-items: flex-start;
+    margin-top: 20px;
+    border-top: 1px solid grey;
+    height: 60vh;
+    background-image: url(./Images/hero-img/hero-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    background-size: cover;
     padding-bottom: 20px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
   }
 
   .hero-content h1 {
-    font-size: 40px;
+    font-size: 55px;
   }
 
   .hero-content p {
-    font-size: 18px;
+    font-size: 22px;
+  }
+
+  .hero-content {
+    color: var(--primary-blue);
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
+    color: white;
   }
 
   .hero-badge {
-    position: relative;
-    right: auto;
-    width: 200px;
-    height: 200px;
-    align-self: center;
-    margin: 10px auto;
-  }
-
-  .hero-badge h4 {
-    font-size: 18px;
-  }
-
-  .h4-dogs {
-    font-size: 52px !important;
-  }
-
-  .hero-badge img {
-    width: 130px;
-    height: 80px;
-    bottom: 20px;
-  }
-
-  .hero-badge p {
-    font-size: 20px;
+    display: none;
   }
 
   .hero-media {
-    width: 100%;
-  }
-
-  .hero-media img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 0 0 6px 6px;
+    display: none;
   }
 
   /* PET CAROUSEL */
+
+  .pet-card-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .pet-card img {
     width: 140px;
     height: 140px;
   }
 
+  .carousel-next {
+    display: none;
+  }
+
   /* SALE SECTION */
+
+  .sale-section-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .sale-section-card {
     width: 170px;
     height: auto;
@@ -1096,6 +1157,13 @@ footer {
   }
 
   /* SHIPPING SECTION */
+
+  .shipping-section {
+    max-width: 900px;
+    margin: 60px auto 40px;
+    background-position: 40% center;
+  }
+
   .shipping-section-txt h2 {
     font-size: 22px;
   }
@@ -1141,17 +1209,21 @@ footer {
 
   /* FOOTER */
   .footer-content {
-    flex-direction: column;
+    flex-direction: row; /* ⬅️ svarbiausia */
+    flex-wrap: wrap; /* ⬅️ kad persikeltų jei netelpa */
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 30px;
-    padding: 30px 20px;
+    padding: 30px;
   }
 
   .footer-newsletter {
-    width: 100%;
+    padding-top: 20px;
+    width: 60%; /* ⬅️ didesnė dalis */
   }
 
   .footer-links {
-    width: 100%;
+    width: 35%; /* ⬅️ šalia */
   }
 }
 
@@ -1204,8 +1276,7 @@ footer {
 
   /* MAIN MENU - scrollable horizontal on mobile */
   .main-menu-options {
-    overflow-x: auto;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0;
     padding: 10px 0;
   }
@@ -1219,6 +1290,22 @@ footer {
   }
 
   /* HERO */
+
+  .hero-media {
+    display: none;
+  }
+
+  .hero {
+    background-image: url(./Images/hero-img/hero-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+  }
+
   .hero-content h1 {
     font-size: 30px;
   }

@@ -30,7 +30,69 @@
       <button id="demo-close-btn">x</button>
     </div>
     <!-- HEADER -->
+
     <header>
+      <div class="burger-menu">
+        <div class="burgermenu-header">
+          <h4>Meniu</h4>
+          <button id="close-burger-btn">x</button>
+        </div>
+        <div class="burger-menu-options">
+          <ul>
+            <li class="burger-menu-title">Categories</li>
+            <li>
+              <img src="./Images/pet-carousel/choices-dog.jpg" alt="Dog" /> Dogs
+              <i class="bi bi-arrow-right"></i>
+            </li>
+            <li>
+              <img src="./Images/pet-carousel/choices-cat.jpg" alt="Cat" /> Cats
+              <i class="bi bi-arrow-right"></i>
+            </li>
+            <li>
+              <img src="./Images/pet-carousel/choices-fish.jpg" alt="Fish" />
+              Fish
+              <i class="bi bi-arrow-right"></i>
+            </li>
+            <li>
+              <img src="./Images/pet-carousel/choices-bird.jpg" alt="Bird" />
+              Bird
+              <i class="bi bi-arrow-right"></i>
+            </li>
+            <li>
+              <img
+                src="./Images/pet-carousel/choices-reptile.jpg"
+                alt="Reptile"
+              />
+              Reptile
+              <i class="bi bi-arrow-right"></i>
+            </li>
+            <li>
+              <img
+                src="./Images/pet-carousel/choices-smallpet.jpg"
+                alt="Small pet"
+              />
+              Small Pet
+              <i class="bi bi-arrow-right"></i>
+            </li>
+            <li>
+              <img
+                src="./Images/pet-carousel/choices-backyard-pet.jpg"
+                alt="Farm and backyard pet"
+              />
+              Farm and backyard pet
+              <i class="bi bi-arrow-right"></i>
+            </li>
+            <li>
+              <img
+                src="./Images/pet-carousel/choices-wildbird.jpg"
+                alt="Wild bird"
+              />
+              Wild Bird
+              <i class="bi bi-arrow-right"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="announcement-bar">
         <p>Anything for Dogs Deals: Save on food, toys & more* ></p>
       </div>
@@ -79,6 +141,7 @@
             <i class="bi bi-person"></i>
             <i class="bi bi-bag-heart"></i>
           </div>
+          <i class="bi bi-list burger hidden" id="burger"></i>
         </nav>
       </div>
       <!-- NEW MAIN MENU -->
@@ -166,7 +229,7 @@
             </li>
             <li><a href="#brands">Brands</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#pet-carrousel">Pets</a></li>
+            <li><a href="#pet-carousel">Pets</a></li>
             <li><a href="#new-pet">New Pet</a></li>
             <li><a href="#sale-section">Deals</a></li>
           </ul>
@@ -207,8 +270,8 @@
           <!--  -->
         </div>
       </section>
-      <!-- PET-CARROUSEL -->
-      <section class="pet-carrousel" id="pet-carrousel">
+      <!-- PET-carousel -->
+      <section class="pet-carousel" id="pet-carousel">
         <div class="container">
           <div class="section-header">
             <h2>Shop by pet</h2>
@@ -268,7 +331,12 @@
                 </div>
               </div>
             </div>
-            <button class="carousel-next" id="carousel-next">></button>
+            <button class="carousel-next" id="carousel-next">
+              <i class="bi bi-arrow-right"></i>
+            </button>
+            <button class="carousel-next" id="carousel-back">
+              <i class="bi bi-arrow-left"></i>
+            </button>
           </div>
         </div>
       </section>
