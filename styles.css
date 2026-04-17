@@ -966,7 +966,7 @@ footer {
 }
 
 .footer-badges img {
-  width: fit-content;
+  width: 150px;
   height: 150px;
 }
 
