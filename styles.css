@@ -852,8 +852,9 @@ header {
 }
 
 .featured-brands-cards img {
-  width: fit-content;
+  width: 150px;
   height: 150px;
+  object-fit: contain;
 }
 
 /* BENEFITS SECTION */
@@ -1316,10 +1317,12 @@ body.no-scroll {
   }
 
   .search-bar-nav {
-    grid-column: 1 / -1; /* full width on second row */
+    grid-column: 1 / -1;
     order: 4;
     width: 100%;
     padding: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .header-actions {
@@ -1331,7 +1334,7 @@ body.no-scroll {
   }
 
   .search-bar-nav input {
-    width: 100%;
+    max-width: 400px;
     box-sizing: border-box;
   }
 
