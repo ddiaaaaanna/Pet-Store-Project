@@ -1,12 +1,3 @@
-// DEMO MESSAGE BUTTON
-
-const demoCloseBtn = document.getElementById("demo-close-btn");
-const demoMessage = document.getElementById("demo-message");
-
-demoCloseBtn.addEventListener("click", () => {
-  demoMessage.classList.add("slide-up");
-});
-
 // SEARCH BAR DROPDOWN
 
 const searchInput = document.getElementById("searchbar");
@@ -121,7 +112,10 @@ const searchBarNav = document.getElementById("search-bar-nav");
 document.addEventListener("click", (event) => {
   if (!searchBarNav.contains(event.target)) {
     searchDropdown.classList.add("hidden");
-    overlay.classList.remove("active");
+
+    if (burgerMenu.classList.contains("hidden")) {
+      overlay.classList.remove("active");
+    }
   }
 });
 
@@ -405,4 +399,24 @@ window.addEventListener("scroll", () => {
 
 scrollUpBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// BURGER MENU LOGIC
+
+const burgerBtn = document.getElementById("burger");
+const burgerMenu = document.getElementById("burger-menu");
+const burgerMenuCloseBtn = document.getElementById("close-burger-btn");
+
+burgerBtn.addEventListener("click", () => {
+  overlay.classList.add("active");
+  burgerMenu.classList.remove("hidden");
+  document.body.classList.add("no-scroll");
+  burgerMenu.classList.add("open");
+});
+
+burgerMenuCloseBtn.addEventListener("click", () => {
+  burgerMenu.classList.remove("open");
+  burgerMenu.classList.add("hidden");
+  overlay.classList.remove("active");
+  document.body.classList.remove("no-scroll");
 });

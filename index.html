@@ -27,72 +27,11 @@
         >🐾 Demo version: This is a front-end landing page demo. Some sections
         are non-functional and for presentation purposes only.</strong
       >
-      <button id="demo-close-btn">x</button>
     </div>
+    <!-- OVERLAY -->
+    <div id="overlay"></div>
     <!-- HEADER -->
-
     <header>
-      <div class="burger-menu">
-        <div class="burgermenu-header">
-          <h4>Meniu</h4>
-          <button id="close-burger-btn">x</button>
-        </div>
-        <div class="burger-menu-options">
-          <ul>
-            <li class="burger-menu-title">Categories</li>
-            <li>
-              <img src="./Images/pet-carousel/choices-dog.jpg" alt="Dog" /> Dogs
-              <i class="bi bi-arrow-right"></i>
-            </li>
-            <li>
-              <img src="./Images/pet-carousel/choices-cat.jpg" alt="Cat" /> Cats
-              <i class="bi bi-arrow-right"></i>
-            </li>
-            <li>
-              <img src="./Images/pet-carousel/choices-fish.jpg" alt="Fish" />
-              Fish
-              <i class="bi bi-arrow-right"></i>
-            </li>
-            <li>
-              <img src="./Images/pet-carousel/choices-bird.jpg" alt="Bird" />
-              Bird
-              <i class="bi bi-arrow-right"></i>
-            </li>
-            <li>
-              <img
-                src="./Images/pet-carousel/choices-reptile.jpg"
-                alt="Reptile"
-              />
-              Reptile
-              <i class="bi bi-arrow-right"></i>
-            </li>
-            <li>
-              <img
-                src="./Images/pet-carousel/choices-smallpet.jpg"
-                alt="Small pet"
-              />
-              Small Pet
-              <i class="bi bi-arrow-right"></i>
-            </li>
-            <li>
-              <img
-                src="./Images/pet-carousel/choices-backyard-pet.jpg"
-                alt="Farm and backyard pet"
-              />
-              Farm and backyard pet
-              <i class="bi bi-arrow-right"></i>
-            </li>
-            <li>
-              <img
-                src="./Images/pet-carousel/choices-wildbird.jpg"
-                alt="Wild bird"
-              />
-              Wild Bird
-              <i class="bi bi-arrow-right"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
       <div class="announcement-bar">
         <p>Anything for Dogs Deals: Save on food, toys & more* ></p>
       </div>
@@ -143,6 +82,124 @@
           </div>
           <i class="bi bi-list burger hidden" id="burger"></i>
         </nav>
+        <div class="burger-menu hidden" id="burger-menu">
+          <div class="burgermenu-header">
+            <h4>Meniu</h4>
+            <button id="close-burger-btn">x</button>
+          </div>
+          <div class="burger-menu-options">
+            <ul class="menu-options">
+              <li class="burger-menu-title">Exclusive offers</li>
+              <li><span class="selected-icon">%</span>Deals</li>
+              <li><span class="selected-icon">𖢥</span>Tick prevention</li>
+              <li><span class="selected-icon">%</span>Dog deals</li>
+            </ul>
+            <ul>
+              <li class="burger-menu-title">Categories</li>
+              <li>
+                <div>
+                  <img src="./Images/pet-carousel/choices-dog.jpg" alt="Dog" />
+                  Dogs
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="./Images/pet-carousel/choices-cat.jpg" alt="Cat" />
+                  Cats
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src="./Images/pet-carousel/choices-fish.jpg"
+                    alt="Fish"
+                  />
+                  Fish
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src="./Images/pet-carousel/choices-bird.jpg"
+                    alt="Bird"
+                  />
+                  Bird
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src="./Images/pet-carousel/choices-reptile.jpg"
+                    alt="Reptile"
+                  />
+                  Reptile
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src="./Images/pet-carousel/choices-smallpet.jpg"
+                    alt="Small pet"
+                  />
+                  Small Pet
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src="./Images/pet-carousel/choices-backyard-pet.jpg"
+                    alt="Farm pet"
+                  />Farm pet
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src="./Images/pet-carousel/choices-wildbird.jpg"
+                    alt="Wild bird"
+                  />
+                  Wild Bird
+                </div>
+                <div>
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+              </li>
+            </ul>
+            <ul class="menu-options">
+              <li class="burger-menu-title">Brands</li>
+              <li class="burger-menu-title">New Pet</li>
+              <li class="burger-menu-title">Deals</li>
+            </ul>
+
+            <ul class="menu-options">
+              <li class="burger-menu-title">Information</li>
+              <li><i class="bi bi-geo-alt-fill"></i> Our locations</li>
+              <li><i class="bi bi-search"></i> Order tracking</li>
+              <li><i class="bi bi-scissors"></i> Grooming services</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <!-- NEW MAIN MENU -->
       <nav class="main-nav">
@@ -237,8 +294,6 @@
       </nav>
     </header>
     <main>
-      <!-- OVERLAY -->
-      <div id="overlay"></div>
       <!-- HERO SECTION -->
       <section>
         <div class="hero container">
@@ -320,7 +375,7 @@
                     src="./Images/pet-carousel/choices-backyard-pet.jpg"
                     alt="Farm pet"
                   />
-                  <p>Farm and backyard pet</p>
+                  <p>Farm pet</p>
                 </div>
                 <div class="pet-card">
                   <img
@@ -409,7 +464,7 @@
                   alt="Solo wet dog food with turkey"
                 />
               </div>
-              <p>Premium wet dog and cat food</p>
+              <p>Premium wet food</p>
             </div>
             <!-- card -->
             <div class="card">
@@ -422,7 +477,7 @@
                   alt="Bravecto tick treatment for dogs"
                 />
               </div>
-              <p>Best tick prevention for dogs</p>
+              <p>Tick prevention</p>
             </div>
             <!-- card -->
             <div class="card">
@@ -435,7 +490,7 @@
                   alt="Stain and odour remover spray for pets"
                 />
               </div>
-              <p>All stain and odour products</p>
+              <p>Cleaning products</p>
             </div>
             <!-- card -->
             <div class="card">
