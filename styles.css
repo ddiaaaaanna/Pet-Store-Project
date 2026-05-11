@@ -1341,10 +1341,11 @@ body.no-scroll {
   .search-bar-nav {
     grid-column: 1 / -1;
     order: 4;
-    width: 100%;
-    padding: 0;
+    /* width: 100%; */
+    /* padding: 0; */
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .header-actions {
@@ -1356,13 +1357,14 @@ body.no-scroll {
   }
 
   .search-bar-nav input {
-    width: 100%;
+    /* width: 100%; */
+    margin: 0 auto;
     box-sizing: border-box;
   }
 
   .search-bar-nav img {
     right: 10px;
-    top: 8px;
+    top: 15px;
   }
 
   /* HERO */
