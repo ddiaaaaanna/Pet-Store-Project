@@ -551,17 +551,6 @@ header {
     background-color 0.2s ease;
 }
 
-#carousel-back {
-  /* opacity: 0;
-  pointer-events: none;
- */
-  position: absolute;
-  left: -13px;
-
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .pet-carousel-container {
   position: relative;
 }
@@ -1037,7 +1026,8 @@ body.no-scroll {
     height: calc(100vh - 184px);
     transform: translateX(-100%);
     transition: transform 0.9s ease;
-    overflow-y: auto;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
   }
 
   .burger-menu.open {
@@ -1201,26 +1191,33 @@ body.no-scroll {
 
   /* SALE SECTION */
 
+  #sale-section-container {
+    padding: 10px;
+    overflow: visible;
+  }
+
   .sale-section-cards {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 40px;
+    padding: 0;
   }
 
   .sale-section-card {
-    width: 170px;
-    height: auto;
+    width: 340px;
+    height: 390px;
   }
 
   .sale-section-card img {
-    width: 170px;
-    height: 170px;
+    width: 350px;
+    height: 350px;
   }
 
   /* SHIPPING SECTION */
 
   .shipping-section {
     max-width: 700px;
-    margin: 60px 40px 40px;
+    margin: 60px auto 40px;
     background-position: 40% center;
   }
 
@@ -1236,10 +1233,14 @@ body.no-scroll {
   /* TOP DEALS */
   .top-deals-cards {
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 5px;
     justify-content: center;
     max-width: 700px;
     margin: 0 auto;
+  }
+
+  .sale-section-content {
+    padding: 10px 0;
   }
 
   /* NEW PET SECTION */
@@ -1313,11 +1314,6 @@ body.no-scroll {
     width: 60%;
     overflow-y: auto !important;
     overscroll-behavior: contain !important;
-  }
-
-  body.no-scroll .burger-menu {
-    overflow-y: auto;
-    overscroll-behavior: contain;
   }
 
   /* HEADER */
@@ -1452,15 +1448,13 @@ body.no-scroll {
   }
 
   .sale-section-card {
-    width: calc(50% - 10px);
-    flex-shrink: 0;
-    flex-grow: 0;
+    width: 150px;
+    height: 270px;
   }
 
   .sale-section-card img {
     width: 100%;
     height: 140px;
-    object-fit: cover;
   }
 
   /* SHIPPING SECTION */
@@ -1548,6 +1542,7 @@ body.no-scroll {
   /* FOOTER */
 
   .footer-content {
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -1555,7 +1550,7 @@ body.no-scroll {
 
   .footer-newsletter {
     width: 100%;
-    box-sizing: border-box;
+    text-align: center;
   }
 
   .footer-links {
@@ -1564,20 +1559,6 @@ body.no-scroll {
   }
 
   .footer-badges {
-    margin-top: 40px;
-  }
-
-  .footer-badges img {
-    height: 100px;
-  }
-
-  .footer-links-list {
-    justify-content: center;
-    padding: 20px;
-    gap: 12px;
-  }
-
-  .footer-list-container {
-    padding: 0;
+    display: none;
   }
 }
