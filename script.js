@@ -67,8 +67,9 @@ function renderSuggestions(suggestions) {
 searchInput.addEventListener("focus", () => {
   searchDropdown.classList.remove("hidden");
   overlay.classList.add("active");
-
+  searchDropdown.style.width = searchInput.offsetWidth + "px";
   renderSuggestions(defaultSuggestions);
+  burgerMenu.classList.add("hidden");
 });
 
 function throwNoResults() {
@@ -90,7 +91,7 @@ function throwNoResults() {
 searchInput.addEventListener("input", () => {
   const value = searchInput.value;
   const valueLower = value.toLowerCase();
-
+  searchDropdown.style.width = searchInput.offsetWidth + "px";
   if (valueLower === "") {
     renderSuggestions(defaultSuggestions);
     return;
@@ -113,7 +114,7 @@ document.addEventListener("click", (event) => {
   if (!searchBarNav.contains(event.target)) {
     searchDropdown.classList.add("hidden");
 
-    if (burgerMenu.classList.contains("hidden")) {
+    if (!burgerMenu.classList.contains("open")) {
       overlay.classList.remove("active");
     }
   }
@@ -139,72 +140,28 @@ menuItem.addEventListener("mouseleave", () => {
 
 // CAROUSEL FUNCTION
 
-const carouselNextBtn = document.getElementById("carousel-next");
-const carouselBackBtn = document.getElementById("carousel-back");
+const carrouselNextBtn = document.getElementById("carousel-next");
 const petCardContainer = document.querySelector(".pet-card-container");
-const petCarouselContainer = document.querySelector(".pet-container");
-const petCard = document.querySelectorAll(".pet-card");
 
-const totalCards = petCard.length;
+let carrouselBtnActive = true;
 
-const cardWidth = petCard[0].offsetWidth;
-const containerWidth = petCarouselContainer.offsetWidth;
-const gap = 25;
+carrouselNextBtn.addEventListener("click", () => {
+  if (carrouselBtnActive) {
+    petCardContainer.style.transform = "translateX(-435px)";
+    carrouselNextBtn.textContent = "<";
 
-const visibleCards = Math.floor(containerWidth / (cardWidth + gap));
-
-const maxIndex = Math.max(0, totalCards - visibleCards);
-
-let currentIndex = 0;
-
-function updateButtons() {
-  if (currentIndex === 0) {
-    carouselBackBtn.style.opacity = "0";
-    carouselBackBtn.style.pointerEvents = "none";
+    carrouselNextBtn.style.left = "-12px";
+    carrouselNextBtn.style.right = "auto";
+    carrouselBtnActive = false;
   } else {
-    carouselBackBtn.style.opacity = "1";
-    carouselBackBtn.style.pointerEvents = "auto";
+    petCardContainer.style.transform = "translateX(0px)";
+    carrouselNextBtn.textContent = ">";
+
+    carrouselNextBtn.style.left = "auto";
+    carrouselNextBtn.style.right = "-26px";
+    carrouselBtnActive = true;
   }
-
-  if (currentIndex >= maxIndex) {
-    carouselNextBtn.style.opacity = "0";
-    carouselNextBtn.style.pointerEvents = "none";
-  } else {
-    carouselNextBtn.style.opacity = "1";
-    carouselNextBtn.style.pointerEvents = "auto";
-  }
-}
-
-carouselNextBtn.addEventListener("click", () => {
-  const cardsToScroll = 1;
-
-  currentIndex += cardsToScroll;
-
-  if (currentIndex > maxIndex) {
-    currentIndex = maxIndex;
-  }
-
-  const moveAmount = (cardWidth + gap) * currentIndex;
-
-  petCardContainer.style.transform = `translateX(-${moveAmount}px)`;
-
-  updateButtons();
 });
-
-carouselBackBtn.addEventListener("click", () => {
-  currentIndex -= 1;
-
-  if (currentIndex < 0) {
-    currentIndex = 0;
-  }
-
-  const moveAmount = (cardWidth + gap) * currentIndex;
-  petCardContainer.style.transform = `translateX(-${moveAmount}px)`;
-
-  updateButtons();
-});
-
-updateButtons();
 
 // PET SALE PRODUCTS
 
@@ -412,6 +369,7 @@ burgerBtn.addEventListener("click", () => {
   burgerMenu.classList.remove("hidden");
   document.body.classList.add("no-scroll");
   burgerMenu.classList.add("open");
+  searchDropdown.classList.add("hidden");
 });
 
 burgerMenuCloseBtn.addEventListener("click", () => {
@@ -419,4 +377,5 @@ burgerMenuCloseBtn.addEventListener("click", () => {
   burgerMenu.classList.add("hidden");
   overlay.classList.remove("active");
   document.body.classList.remove("no-scroll");
+  searchDropdown.classList.remove("hidden");
 });

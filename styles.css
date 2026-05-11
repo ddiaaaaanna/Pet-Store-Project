@@ -254,11 +254,11 @@ header {
   border-radius: 0 0 6px 6px;
   box-shadow: var(--shadow-soft);
   position: absolute;
-  width: inherit;
   height: 265px;
   overflow: hidden;
   z-index: 30;
   background-color: white;
+  box-sizing: border-box;
 }
 
 .search-item {
@@ -966,8 +966,9 @@ footer {
 }
 
 .footer-badges img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
 }
 
 .trademark {
@@ -1119,6 +1120,10 @@ body.no-scroll {
     right: 5px;
   }
 
+  .search-bar-dropdown {
+    box-sizing: border-box;
+  }
+
   .header-actions i {
     padding: 0 6px;
     font-size: 1.3em;
@@ -1214,8 +1219,8 @@ body.no-scroll {
   /* SHIPPING SECTION */
 
   .shipping-section {
-    max-width: 900px;
-    margin: 60px auto 40px;
+    max-width: 700px;
+    margin: 60px 40px 40px;
     background-position: 40% center;
   }
 
@@ -1266,21 +1271,35 @@ body.no-scroll {
 
   /* FOOTER */
   .footer-content {
-    flex-direction: row; /* ⬅️ svarbiausia */
-    flex-wrap: wrap; /* ⬅️ kad persikeltų jei netelpa */
-    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
-    gap: 30px;
-    padding: 30px;
+    justify-content: space-between;
+    padding: 20px 30px;
   }
 
   .footer-newsletter {
-    padding-top: 20px;
-    width: 60%; /* ⬅️ didesnė dalis */
+    width: 55%;
+    box-sizing: border-box;
   }
 
   .footer-links {
-    width: 35%; /* ⬅️ šalia */
+    width: 35%;
+  }
+
+  .footer-badges img {
+    height: 100px;
+  }
+
+  .footer-list-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .footer-links-list {
+    justify-content: center;
+    padding: 20px;
+    gap: 12px;
   }
 }
 
@@ -1290,8 +1309,15 @@ body.no-scroll {
 
 @media (max-width: 480px) {
   .burger-menu {
-    height: calc(100vh - 171px);
+    height: calc(100vh - 250px);
     width: 60%;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+  }
+
+  body.no-scroll .burger-menu {
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   /* HEADER */
@@ -1334,7 +1360,7 @@ body.no-scroll {
   }
 
   .search-bar-nav input {
-    max-width: 400px;
+    width: 100%;
     box-sizing: border-box;
   }
 
@@ -1440,7 +1466,7 @@ body.no-scroll {
   /* SHIPPING SECTION */
   .shipping-section {
     max-width: 400px;
-    /* margin: 60px auto 40px; */
+    margin: 60px auto 40px;
     background-position: 60% center;
     position: relative;
   }
@@ -1537,6 +1563,10 @@ body.no-scroll {
     align-items: center;
   }
 
+  .footer-badges {
+    margin-top: 40px;
+  }
+
   .footer-badges img {
     height: 100px;
   }
@@ -1545,5 +1575,9 @@ body.no-scroll {
     justify-content: center;
     padding: 20px;
     gap: 12px;
+  }
+
+  .footer-list-container {
+    padding: 0;
   }
 }
